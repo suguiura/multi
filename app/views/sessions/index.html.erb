@@ -23,8 +23,8 @@
 
 <% if @machine %>
   <%= link_to 'New session', new_machine_session_path(@machine) %> |
-  <%= link_to 'Back', machine_path(@machine) %> |
-  <%= link_to 'All Sessions', '/sessions' %>
+  <%= link_to 'Back', @machine %> |
+  <%= link_to 'All Sessions', sessions_path %>
 <% end %>
 
 <% unless @sessions.empty? %>
