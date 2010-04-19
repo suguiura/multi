@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :operators
+
 
   map.sessions "/sessions.:format", :controller=>"sessions", :action=>"index", :conditions => { :method => :get }
   map.resources :machines, :has_many => :sessions, :shallow => true
