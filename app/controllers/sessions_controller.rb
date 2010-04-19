@@ -85,10 +85,11 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1.xml
   def destroy
     @session = Session.find(params[:id])
+    @machine = @session.machine
     @session.destroy
 
     respond_to do |format|
-      format.html { redirect_to(sessions_url) }
+      format.html { redirect_to(machine_sessions_url(@machine)) }
       format.xml  { head :ok }
     end
   end
