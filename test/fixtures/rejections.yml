@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  totalRejected: 1
+  session: 
+
+two:
+  totalRejected: 1
+  session: 

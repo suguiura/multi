@@ -1,0 +1,22 @@
+<h1>Listing rejections</h1>
+
+<table>
+  <tr>
+    <th>Totalrejected</th>
+    <th>Session</th>
+  </tr>
+
+<% @rejections.each do |rejection| %>
+  <tr>
+    <td><%=h rejection.totalRejected %></td>
+    <td><%=h rejection.session %></td>
+    <td><%= link_to 'Show', rejection %></td>
+    <td><%= link_to 'Edit', edit_rejection_path(rejection) %></td>
+    <td><%= link_to 'Destroy', rejection, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New rejection', new_rejection_path %>

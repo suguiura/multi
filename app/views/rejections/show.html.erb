@@ -1,0 +1,13 @@
+<p>
+  <b>Totalrejected:</b>
+  <%=h @rejection.totalRejected %>
+</p>
+
+<p>
+  <b>Session:</b>
+  <%=h @rejection.session %>
+</p>
+
+
+<%= link_to 'Edit', edit_rejection_path(@rejection) %> |
+<%= link_to 'Back', rejections_path %>

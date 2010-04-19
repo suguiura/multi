@@ -1,0 +1,20 @@
+<h1>Editing rejection</h1>
+
+<% form_for(@rejection) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :totalRejected %><br />
+    <%= f.text_field :totalRejected %>
+  </p>
+  <p>
+    <%= f.label :session %><br />
+    <%= f.text_field :session %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @rejection %> |
+<%= link_to 'Back', rejections_path %>
