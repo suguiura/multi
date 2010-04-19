@@ -1,8 +1,17 @@
 class RejectionsController < ApplicationController
+
+  before_filter :find_session, :only => [ :index, :new, :create ]
+
   # GET /rejections
   # GET /rejections.xml
+  # GET /sessions/1/rejections
+  # GET /sessions/1/rejections.xml
   def index
-    @rejections = Rejection.all
+    @rejections = if @session
+      @session.rejections
+    else
+      Rejection.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,10 +30,10 @@ class RejectionsController < ApplicationController
     end
   end
 
-  # GET /rejections/new
-  # GET /rejections/new.xml
+  # GET /sessions/1/rejections/new
+  # GET /sessions/1/rejections/new.xml
   def new
-    @rejection = Rejection.new
+    @rejection = @session.rejections.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,10 +46,10 @@ class RejectionsController < ApplicationController
     @rejection = Rejection.find(params[:id])
   end
 
-  # POST /rejections
-  # POST /rejections.xml
+  # POST /sessions/1/rejections
+  # POST /sessions/1/rejections.xml
   def create
-    @rejection = Rejection.new(params[:rejection])
+    @rejection = @session.rejections.build(params[:rejection])
 
     respond_to do |format|
       if @rejection.save
@@ -75,11 +84,17 @@ class RejectionsController < ApplicationController
   # DELETE /rejections/1.xml
   def destroy
     @rejection = Rejection.find(params[:id])
+    @session = @rejection.session
     @rejection.destroy
 
     respond_to do |format|
-      format.html { redirect_to(rejections_url) }
+      format.html { redirect_to(session_rejections_url(@session)) }
       format.xml  { head :ok }
     end
   end
+  
+  private
+    def find_session
+      @session = Session.find(params[:session_id]) if params[:session_id]
+    end
 end

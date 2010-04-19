@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :session %><br />
-    <%= f.text_field :session %>
+    <%= text_field_tag 'session', @rejection.session.start, :disabled => true %>
   </p>
   <p>
     <%= f.submit 'Update' %>

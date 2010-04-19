@@ -5,9 +5,10 @@
 
 <p>
   <b>Session:</b>
-  <%=h @rejection.session %>
+  <%=h @rejection.session.start %>
 </p>
 
 
 <%= link_to 'Edit', edit_rejection_path(@rejection) %> |
-<%= link_to 'Back', rejections_path %>
+<%= link_to 'Session Rejections', session_rejections_path(@rejection.session) %> |
+<%= link_to 'All Rejections', rejections_path %>
