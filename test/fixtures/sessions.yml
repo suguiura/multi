@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start: 2010-04-19 10:34:29
+  end: 2010-04-19 10:34:29
+  machine: 
+
+two:
+  start: 2010-04-19 10:34:29
+  end: 2010-04-19 10:34:29
+  machine: 
