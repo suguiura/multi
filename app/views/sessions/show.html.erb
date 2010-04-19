@@ -13,7 +13,11 @@
   <%=h @session.machine.code %>
 </p>
 
+<p>
+  <%= link_to 'Rejections', session_rejections_path(@session) %>
+</p>
+
 
 <%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', machine_sessions_path(@session.machine) %> |
-<%= link_to 'All Sessions', '/sessions' %>
+<%= link_to 'Machine Sessions', machine_sessions_path(@session.machine) %> |
+<%= link_to 'All Sessions', sessions_path %>
