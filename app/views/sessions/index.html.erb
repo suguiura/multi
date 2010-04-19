@@ -1,4 +1,4 @@
-<h1>Listing sessions</h1>
+<h1>Listing sessions<% if @machine %> for machine <%= @machine.code %><% end %></h1>
 
 <table>
   <tr>
@@ -11,7 +11,7 @@
   <tr>
     <td><%=h session.start %></td>
     <td><%=h session.end %></td>
-    <td><%=h session.machine %></td>
+    <td><%= link_to session.machine.code, session.machine %></td>
     <td><%= link_to 'Show', session %></td>
     <td><%= link_to 'Edit', edit_session_path(session) %></td>
     <td><%= link_to 'Destroy', session, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -21,4 +21,9 @@
 
 <br />
 
-<%= link_to 'New session', new_session_path %>
+<% if @machine %>
+<%= link_to 'New session', new_machine_session_path(@machine) %> |
+<%= link_to 'Back', machine_path(@machine) %> |
+<%= link_to 'All Sessions', '/sessions' %>
+<% end %>
+

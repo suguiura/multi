@@ -1,8 +1,17 @@
 class SessionsController < ApplicationController
+
+  before_filter :find_machine, :only => [ :index, :new, :create ]
+
   # GET /sessions
   # GET /sessions.xml
+  # GET /machine/1/sessions
+  # GET /machine/1/sessions.xml
   def index
-    @sessions = Session.all
+    @sessions = if @machine
+      @machine.sessions
+    else
+      Session.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,10 +30,10 @@ class SessionsController < ApplicationController
     end
   end
 
-  # GET /sessions/new
-  # GET /sessions/new.xml
+  # GET /machine/1/sessions/new
+  # GET /machine/1/sessions/new.xml
   def new
-    @session = Session.new
+    @session = @machine.sessions.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,10 +46,10 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
   end
 
-  # POST /sessions
-  # POST /sessions.xml
+  # POST /machine/1/sessions
+  # POST /machine/1/sessions.xml
   def create
-    @session = Session.new(params[:session])
+    @session = @machine.sessions.build(params[:session])
 
     respond_to do |format|
       if @session.save
@@ -82,4 +91,9 @@ class SessionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+    def find_machine
+      @machine = Machine.find(params[:machine_id]) if params[:machine_id]
+    end
 end

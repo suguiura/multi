@@ -10,9 +10,10 @@
 
 <p>
   <b>Machine:</b>
-  <%=h @session.machine %>
+  <%=h @session.machine.code %>
 </p>
 
 
 <%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+<%= link_to 'Back', machine_sessions_path(@session.machine) %> |
+<%= link_to 'All Sessions', '/sessions' %>
