@@ -22,3 +22,8 @@
 <br />
 
 <%= link_to 'New machine', new_machine_path %>
+<% unless @machines.empty? %>
+<p>
+  <%= link_to 'Excel Format', machines_path(:format => :xls) %>
+</p>
+<% end %>

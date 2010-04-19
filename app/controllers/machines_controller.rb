@@ -7,6 +7,7 @@ class MachinesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @machines }
+      format.xls  { send_file XLS.render_xls(@machines), :filename => 'machines_listing.xls', :type => "application/vnd.ms-excel" }
     end
   end
 

@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.sessions "/sessions.:format", :controller=>"sessions", :action=>"index", :conditions => { :method => :get }
   map.resources :machines, :has_many => :sessions, :shallow => true
 
   # The priority is based upon order of creation: first created -> highest priority.
