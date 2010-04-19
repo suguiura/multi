@@ -1,6 +1,6 @@
 <h1>Editing session</h1>
 
-<% form_for(@session) do |f| %>
+<% form_for([@machine, @session]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :machine %><br />
-    <%= f.text_field :machine %>
+    <%= text_field_tag "machine", @machine.code, :disabled => true %>
   </p>
   <p>
     <%= f.submit 'Update' %>
@@ -21,4 +21,5 @@
 <% end %>
 
 <%= link_to 'Show', @session %> |
-<%= link_to 'Back', sessions_path %>
+<%= link_to 'Machine Sessions', machine_sessions_path(@machine) %> |
+<%= link_to 'All Sessions', sessions_path %>
