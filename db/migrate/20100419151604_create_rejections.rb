@@ -3,6 +3,7 @@ class CreateRejections < ActiveRecord::Migration
     create_table :rejections do |t|
       t.integer :totalRejected
       t.references :session
+      t.references :problem
 
       t.timestamps
     end
