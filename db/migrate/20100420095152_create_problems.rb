@@ -1,7 +1,7 @@
 class CreateProblems < ActiveRecord::Migration
   def self.up
     create_table :problems do |t|
-      t.script :name
+      t.string :name
       t.text :description
 
       t.timestamps
