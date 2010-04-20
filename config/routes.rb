@@ -1,12 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :problems
 
 
-  map.resources :operators
+#  map.resources :operators
 
   map.resources :rejections, :only => [ :index ]
   map.resources :sessions, :only => [ :index ], :has_many => :rejections, :shallow => true
   map.resources :machines, :has_many => :sessions, :shallow => true
+  map.resources :problems do |problem|
+    problem.resources :rejections, :controller => "problems/rejections", :only => [ :index ]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 

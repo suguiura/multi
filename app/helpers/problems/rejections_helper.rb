@@ -1,0 +1,2 @@
+module Problems::RejectionsHelper
+end

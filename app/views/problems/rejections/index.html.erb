@@ -1,0 +1,23 @@
+<h1>Listing rejections for problem <%= link_to @problem.name, @problem %></h1>
+
+<table>
+  <tr>
+    <th>Totalrejected</th>
+    <th>Session</th>
+  </tr>
+
+<% @rejections.each do |rejection| %>
+  <tr>
+    <td><%=h rejection.totalRejected %></td>
+    <td><%= link_to rejection.session.start, rejection.session %></td>
+    <td><%= link_to 'Show', rejection %></td>
+    <td><%= link_to 'Edit', edit_rejection_path(rejection) %></td>
+    <td><%= link_to 'Destroy', rejection, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', problem_rejections_path(@problem) %> |
+<%= link_to 'All Rejections', rejections_path %>
