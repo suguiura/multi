@@ -1,0 +1,2 @@
+module Sessions::RejectionsHelper
+end

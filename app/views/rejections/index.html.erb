@@ -1,4 +1,4 @@
-<h1>Listing rejections<% if @session %> for session <%= link_to @session.start, @session %><% end %></h1>
+<h1>Listing rejections</h1>
 
 <table>
   <tr>
@@ -10,16 +10,9 @@
   <tr>
     <td><%=h rejection.totalRejected %></td>
     <td><%= link_to rejection.session.start, rejection.session %></td>
-    <td><%= link_to 'Show', rejection %></td>
-    <td><%= link_to 'Edit', edit_rejection_path(rejection) %></td>
-    <td><%= link_to 'Destroy', rejection, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', rejections_path, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<% if @session %>
-  <%= link_to 'New rejection', new_session_rejection_path(@session) %> |
-  <%= link_to 'All Rejections', rejections_path %>
-<% end %>

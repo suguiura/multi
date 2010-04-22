@@ -1,3 +1,3 @@
 class Problem < ActiveRecord::Base
-  has_many :rejections
+  has_many :rejections, :dependent => :destroy
 end

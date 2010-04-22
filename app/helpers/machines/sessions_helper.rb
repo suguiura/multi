@@ -1,0 +1,2 @@
+module Machines::SessionsHelper
+end

@@ -1,4 +1,4 @@
-<h1>Listing sessions</h1>
+<h1>Listing sessions for machine <%= link_to @machine.code, @machine %></h1>
 
 <table>
   <tr>
@@ -23,6 +23,10 @@
 
 <% unless @sessions.empty? %>
 <p>
-  <%= link_to('Excel Format', sessions_path(:format => :xls)) %>
+  <%= link_to('Excel Format', machine_sessions_path(@machine, :format => :xls)) %>
 </p>
 <% end %>
+
+<%= link_to 'New session', new_machine_session_path(@machine) %> |
+<%= link_to 'Back', @machine %> |
+<%= link_to 'All Sessions', sessions_path %>

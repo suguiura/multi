@@ -12,6 +12,18 @@ class Problems::RejectionsController < ApplicationController
       format.xml  { render :xml => @rejections }
     end
   end
+
+  # DELETE /problems/1/rejections/1
+  # DELETE /problems/1/rejections/1.xml
+  def destroy
+    @rejection = Rejection.find(params[:id])
+    @rejection.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(problem_rejections_url(@problem)) }
+      format.xml  { head :ok }
+    end
+  end
   
   private
     def find_problem

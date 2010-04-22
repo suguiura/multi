@@ -8,6 +8,10 @@
   <%=h @problem.description %>
 </p>
 
+<p>
+  <%= link_to 'Rejections', problem_rejections_path(@problem) %>
+</p>
+
 
 <%= link_to 'Edit', edit_problem_path(@problem) %> |
 <%= link_to 'Back', problems_path %>
