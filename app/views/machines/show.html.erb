@@ -1,22 +1,24 @@
+<%= link_to t('edit'), edit_machine_path(@machine) %> |
+<%= link_to t('delete'), @machine, :confirm => t('confirm'), :method => :delete %>
+
 <p>
-  <b>Code:</b>
+  <b><%=h Machine.human_attribute_name(:code) %>:</b>
   <%=h @machine.code %>
 </p>
 
 <p>
-  <b>Availabletime:</b>
+  <b><%=h Machine.human_attribute_name(:availableTime) %>:</b>
   <%=h @machine.availableTime %>
 </p>
 
 <p>
-  <b>Totalheaders:</b>
+  <b><%=h Machine.human_attribute_name(:totalHeaders) %>:</b>
   <%=h @machine.totalHeaders %>
 </p>
 
-
 <p>
-  <%= link_to 'Sessions', machine_sessions_path(@machine) %>
+  <%= link_to t('.sessions'), machine_sessions_path(@machine) %>
 </p>
 
-<%= link_to 'Edit', edit_machine_path(@machine) %> |
-<%= link_to 'Back', machines_path %>
+<%= link_to t('machines.index.all'), machines_path %>
+

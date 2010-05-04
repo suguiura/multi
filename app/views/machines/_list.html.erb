@@ -1,0 +1,21 @@
+
+<table>
+  <tr>
+    <th><%=h Machine.human_attribute_name(:id) %></th>
+    <th><%=h Machine.human_attribute_name(:code) %></th>
+    <th><%=h Machine.human_attribute_name(:availableTime) %></th>
+    <th><%=h Machine.human_attribute_name(:totalHeaders) %></th>
+  </tr>
+
+<% @machines.each do |machine| %>
+  <tr>
+    <td><%=h machine.id %></td>
+    <td><%=h machine.code %></td>
+    <td><%=h machine.availableTime %></td>
+    <td><%=h machine.totalHeaders %></td>
+    <td><%= link_to t('show'), machine %></td>
+    <td><%= link_to t('delete'), machine, :confirm => t('confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

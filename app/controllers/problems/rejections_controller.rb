@@ -10,6 +10,7 @@ class Problems::RejectionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @rejections }
+      format.xls  { send_file XLS.render_xls(Rejection, @rejections), :filename => 'rejections_listing.xls', :type => "application/vnd.ms-excel" }
     end
   end
 

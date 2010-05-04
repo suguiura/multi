@@ -1,0 +1,8 @@
+pt:
+  rejections:
+    index:
+      header: 'Lista de rejeições'
+      new: 'Nova rejeição'
+      all: 'Todas as rejeições'
+    new:
+      header: 'Cadastro de nova rejeição'

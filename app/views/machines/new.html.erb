@@ -1,23 +1,5 @@
-<h1>New machine</h1>
+<h1><%= t '.header' %></h1>
 
-<% form_for(@machine) do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => "form", :locals => { :form_object => @machine } %>
 
-  <p>
-    <%= f.label :code %><br />
-    <%= f.text_field :code %>
-  </p>
-  <p>
-    <%= f.label :availableTime %><br />
-    <%= f.text_field :availableTime %>
-  </p>
-  <p>
-    <%= f.label :totalHeaders %><br />
-    <%= f.text_field :totalHeaders %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', machines_path %>
+<%= link_to t('back'), machines_path %>

@@ -1,0 +1,18 @@
+
+<table>
+  <tr>
+    <th><%=h Problem.human_attribute_name(:name) %></th>
+    <th><%=h Problem.human_attribute_name(:description) %></th>
+  </tr>
+ 
+<% @problems.each do |problem| %>
+  <tr>
+    <td><%=h problem.name %></td>
+    <td><%=h problem.description %></td>
+    <td><%= link_to t('show'), problem %></td>
+    <td><%= link_to t('edit'), edit_problem_path(problem) %></td>
+    <td><%= link_to t('delete'), problem, :confirm => t('confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,24 +1,15 @@
-<h1>Listing rejections for session <%= link_to @session.start, @session %></h1>
+<h1><%= t('rejections.index.header') %> (<%= Session.human_name %>: <%= link_to @session.id, @session %>)</h1>
 
-<table>
-  <tr>
-    <th>Totalrejected</th>
-    <th>Session</th>
-    <th>Problem</th>
-  </tr>
+<%= render :partial => "/rejections/list" %>
+<%= link_to t('rejections.index.new'), new_session_rejection_path(@session) %>
 
-<% @rejections.each do |rejection| %>
-  <tr>
-    <td><%=h rejection.totalRejected %></td>
-    <td><%= link_to rejection.session.start, rejection.session %></td>
-    <td><%= link_to rejection.problem.name, rejection.problem %></td>
-    <td><%= link_to 'Destroy', session_rejection_path(@session, rejection), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% unless @rejections.empty? %>
+<p>
+  <%= link_to t('excel_format'), session_rejections_path(@session, :format => :xls) %>
+</p>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New rejection', new_session_rejection_path(@session) %> |
-<%= link_to 'Back', @session %> |
-<%= link_to 'All Rejections', rejections_path %>
+<p>
+  <%= link_to t('back'), @session %> |
+  <%= link_to t('rejections.index.all'), rejections_path %>
+</p>

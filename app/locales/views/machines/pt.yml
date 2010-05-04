@@ -1,0 +1,12 @@
+pt:
+  machines:
+    index:
+      header: 'Lista de máquinas'
+      new: 'Nova máquina'
+      all: 'Todas as máquinas'
+    new:
+      header: 'Cadastro de nova máquina'
+    edit:
+      header: 'Edição de máquina'
+    show:
+      sessions: 'Sessões da máquina'

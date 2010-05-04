@@ -10,14 +10,15 @@ class Machines::SessionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @sessions }
-      format.xls  { send_file XLS.render_xls(@sessions), :filename => 'sessions_listing.xls', :type => "application/vnd.ms-excel" }
+      format.xls  { send_file XLS.render_xls(Session, @sessions), :filename => 'sessions_listing.xls', :type => "application/vnd.ms-excel" }
     end
   end
 
   # GET /machine/1/sessions/new
   # GET /machine/1/sessions/new.xml
   def new
-    @session = @machine.sessions.build
+    @session = Session.new
+    @session.machine = @machine
 
     respond_to do |format|
       format.html # new.html.erb
@@ -28,7 +29,7 @@ class Machines::SessionsController < ApplicationController
   # POST /machine/1/sessions
   # POST /machine/1/sessions.xml
   def create
-    @session = @machine.sessions.build(params[:session])
+    @session = Session.new(params[:session])
 
     respond_to do |format|
       if @session.save

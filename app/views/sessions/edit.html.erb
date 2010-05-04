@@ -1,25 +1,7 @@
-<h1>Editing session</h1>
+<h1><%= t '.header' %></h1>
 
-<% form_for(@session) do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => 'form', :locals => { :form_object => @session } %>
 
-  <p>
-    <%= f.label :start %><br />
-    <%= f.datetime_select :start %>
-  </p>
-  <p>
-    <%= f.label :end %><br />
-    <%= f.datetime_select :end %>
-  </p>
-  <p>
-    <%= f.label :machine %><br />
-    <%= text_field_tag "machine", @session.machine.code, :disabled => true %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @session %> |
-<%= link_to 'Machine Sessions', machine_sessions_path(@session.machine) %> |
-<%= link_to 'All Sessions', sessions_path %>
+<%= link_to t('show'), @session %> |
+<%= link_to t('machines.show.sessions'), machine_sessions_path(@session.machine) %> |
+<%= link_to t('sessions.index.all'), sessions_path %>

@@ -1,18 +1,10 @@
-<h1>Listing rejections</h1>
+<h1><%= t('.header') %></h1>
 
-<table>
-  <tr>
-    <th>Totalrejected</th>
-    <th>Session</th>
-  </tr>
+<%= render :partial => "list" %>
 
-<% @rejections.each do |rejection| %>
-  <tr>
-    <td><%=h rejection.totalRejected %></td>
-    <td><%= link_to rejection.session.start, rejection.session %></td>
-    <td><%= link_to 'Destroy', rejections_path, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% unless @rejections.empty? %>
+<p>
+  <%= link_to t('excel_format'), rejections_path(:format => :xls) %>
+</p>
 <% end %>
-</table>
 
-<br />

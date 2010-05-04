@@ -1,16 +1,14 @@
 
 class XLS
-  def XLS.render_xls(array)
+  def XLS.render_xls(object_class, array)
     require 'spreadsheet'
-
-    columns = array.first.attributes.keys(&:to_sym)
 
     book = Spreadsheet::Workbook.new
     sheet = book.create_worksheet
 
-    row = sheet.last_row
+    columns = object_class.column_names - ['created_at', 'updated_at']
     columns.each do |column|
-      row.push column.to_s
+      sheet.last_row.push object_class.human_attribute_name(column)
     end
 
     array.each do |item|

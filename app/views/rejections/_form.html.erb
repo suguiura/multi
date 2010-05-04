@@ -1,0 +1,23 @@
+<% form_for(form_object) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :totalRejected %><br />
+    <%= f.text_field :totalRejected %>
+  </p>
+  <p>
+    <%= f.label :session %><br />
+    <%= f.hidden_field :session_id %>
+    <%= text_field_tag "session", @rejection.session.id, :disabled => true %>
+  </p>
+  <p>
+    <%= f.label :problem %><br />
+    <% Problem.all.each do |problem| %>
+      <%= f.radio_button :problem_id, problem.id, :checked => true %> <%= problem.name %><br />
+    <% end %>
+  </p>
+  <p>
+    <%= f.submit t('send') %>
+  </p>
+<% end %>
+

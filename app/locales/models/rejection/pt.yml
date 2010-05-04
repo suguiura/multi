@@ -1,0 +1,11 @@
+pt:
+  activerecord:
+    models:
+      rejection:
+        one: 'Rejeição'
+        other: 'Rejeições'
+    attributes:
+      rejection:
+        totalRejected: 'Número de placas rejeitadas'
+        session_id: 'Sessão'
+        problem_id: 'Problema'

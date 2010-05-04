@@ -1,23 +1,24 @@
+<%= link_to t('edit'), edit_session_path(@session) %> |
+<%= link_to t('delete'), session, :confirm => t('confirm'), :method => :delete %>
+
 <p>
-  <b>Start:</b>
+  <b><%=h Session.human_attribute_name(:start) %>:</b>
   <%=h @session.start %>
 </p>
 
 <p>
-  <b>End:</b>
+  <b><%=h Session.human_attribute_name(:end) %>:</b>
   <%=h @session.end %>
 </p>
 
 <p>
-  <b>Machine:</b>
+  <b><%=h Machine.human_name %>:</b>
   <%=h @session.machine.code %>
 </p>
 
 <p>
-  <%= link_to 'Rejections', session_rejections_path(@session) %>
+  <%= link_to t('.rejections'), session_rejections_path(@session) %>
 </p>
 
-
-<%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Machine Sessions', machine_sessions_path(@session.machine) %> |
-<%= link_to 'All Sessions', sessions_path %>
+<%= link_to t('machines.show.sessions'), machine_sessions_path(@session.machine) %> |
+<%= link_to t('sessions.index.all'), sessions_path %>

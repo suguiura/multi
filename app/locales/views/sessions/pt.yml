@@ -1,0 +1,12 @@
+pt:
+  sessions:
+    index:
+      header: 'Lista de Sessões'
+      new: 'Nova Sessão'
+      all: 'Todas as Sessões'
+    new:
+      header: 'Cadastro de nova Sessão'
+    edit:
+      header: 'Edição de Sessão'
+    show:
+      rejections: 'Rejeições da Sessão'

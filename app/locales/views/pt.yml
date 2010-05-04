@@ -1,0 +1,9 @@
+pt:
+  back: 'Voltar'
+  show: 'Exibir'
+  edit: 'Editar'
+  send: 'Enviar'
+  delete: 'Apagar'
+  confirm: 'Tem certeza?'
+  excel_format: 'Formato Excel'
+  

@@ -1,0 +1,10 @@
+pt:
+  activerecord:
+    models:
+      problem:
+        one: 'Problema'
+        other: 'Problemas'
+    attributes:
+      problem:
+        name: 'Nome'
+        description: 'Descrição'

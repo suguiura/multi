@@ -1,28 +1,10 @@
-<h1>Listing sessions</h1>
+<h1><%= t('.header') %></h1>
 
-<table>
-  <tr>
-    <th>Start</th>
-    <th>End</th>
-    <th>Machine</th>
-  </tr>
-
-<% @sessions.each do |session| %>
-  <tr>
-    <td><%=h session.start %></td>
-    <td><%=h session.end %></td>
-    <td><%= link_to session.machine.code, session.machine %></td>
-    <td><%= link_to 'Show', session %></td>
-    <td><%= link_to 'Edit', edit_session_path(session) %></td>
-    <td><%= link_to 'Destroy', session, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<%= render :partial => "list" %>
 
 <% unless @sessions.empty? %>
 <p>
-  <%= link_to('Excel Format', sessions_path(:format => :xls)) %>
+  <%= link_to t('excel_format'), sessions_path(:format => :xls) %>
 </p>
 <% end %>
+

@@ -3,12 +3,12 @@ ActionController::Routing::Routes.draw do |map|
 
 #  map.resources :operators
 
-  map.resources :rejections, :only => [ :index, :delete ]
+  map.resources :rejections, :only => [ :index, :destroy ]
   map.resources :problems do |problem|
     problem.resources :rejections, :namespace => "problems/", :only => [ :index, :destroy ]
   end
   map.resources :sessions, :except => [ :new, :create ] do |session|
-    session.resources :rejections, :namespace => "sessions/", :except => [ :show, :update, :edit ]
+    session.resources :rejections, :namespace => "sessions/", :only => [ :index, :new, :create, :destroy ]
   end
   map.resources :machines do |machine|
     machine.resources :sessions, :namespace => "machines/", :only => [ :index, :new, :create ]

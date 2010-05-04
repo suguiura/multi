@@ -1,17 +1,17 @@
 <p>
-  <b>Name:</b>
+  <b><%=h Problem.human_attribute_name(:name) %>:</b>
   <%=h @problem.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%=h Problem.human_attribute_name(:description) %>:</b>
   <%=h @problem.description %>
 </p>
 
 <p>
-  <%= link_to 'Rejections', problem_rejections_path(@problem) %>
+  <%= link_to t('.rejections'), problem_rejections_path(@problem) %>
 </p>
 
 
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
+<%= link_to t('edit'), edit_problem_path(@problem) %> |
+<%= link_to t('back'), problems_path %>

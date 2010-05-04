@@ -10,13 +10,15 @@ class Sessions::RejectionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @rejections }
+      format.xls  { send_file XLS.render_xls(Rejection, @rejections), :filename => 'rejections_listing.xls', :type => "application/vnd.ms-excel" }
     end
   end
 
   # GET /sessions/1/rejections/new
   # GET /sessions/1/rejections/new.xml
   def new
-    @rejection = @session.rejections.build
+    @rejection = Rejection.new
+    @rejection.session = @session
 
     respond_to do |format|
       format.html # new.html.erb
@@ -27,12 +29,12 @@ class Sessions::RejectionsController < ApplicationController
   # POST /sessions/1/rejections
   # POST /sessions/1/rejections.xml
   def create
-    @rejection = @session.rejections.build(params[:rejection])
+    @rejection = Rejection.new(params[:rejection])
 
     respond_to do |format|
       if @rejection.save
         flash[:notice] = 'Rejection was successfully created.'
-        format.html { redirect_to(session_rejections_url(@session)) }
+        format.html { redirect_to(session_rejections_url(@rejection.session)) }
         format.xml  { render :xml => @rejection, :status => :created, :location => @rejection }
       else
         format.html { render :action => "new" }

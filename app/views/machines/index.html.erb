@@ -1,29 +1,12 @@
-<h1>Listing machines</h1>
+<h1><%= t '.header' %></h1>
 
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Availabletime</th>
-    <th>Totalheaders</th>
-  </tr>
+<%= render :partial => 'list' %>
 
-<% @machines.each do |machine| %>
-  <tr>
-    <td><%=h machine.code %></td>
-    <td><%=h machine.availableTime %></td>
-    <td><%=h machine.totalHeaders %></td>
-    <td><%= link_to 'Show', machine %></td>
-    <td><%= link_to 'Edit', edit_machine_path(machine) %></td>
-    <td><%= link_to 'Destroy', machine, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= link_to t('.new'), new_machine_path %>
 
-<br />
-
-<%= link_to 'New machine', new_machine_path %>
 <% unless @machines.empty? %>
 <p>
-  <%= link_to 'Excel Format', machines_path(:format => :xls) %>
+  <%= link_to t('excel_format'), machines_path(:format => :xls) %>
 </p>
 <% end %>
+

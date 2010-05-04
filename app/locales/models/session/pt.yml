@@ -1,0 +1,11 @@
+pt:
+  activerecord:
+    models:
+      session:
+        one: 'Sessão'
+        other: 'Sessões'
+    attributes:
+      session:
+        start: 'Início'
+        end: 'Fim'
+        machine_id: 'Máquina'

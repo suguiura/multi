@@ -1,21 +1,12 @@
-<h1>Listing rejections for problem <%= link_to @problem.name, @problem %></h1>
+<h1><%= t('rejections.index.header') %> (<%= Problem.human_name %>: <%= link_to @problem.name, @problem %>)</h1>
 
-<table>
-  <tr>
-    <th>Totalrejected</th>
-    <th>Session</th>
-  </tr>
+<%= render :partial => 'rejections/list' %>
 
-<% @rejections.each do |rejection| %>
-  <tr>
-    <td><%=h rejection.totalRejected %></td>
-    <td><%= link_to rejection.session.start, rejection.session %></td>
-    <td><%= link_to 'Destroy', problem_rejection_path(@problem, rejection), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% unless @rejections.empty? %>
+<p>
+  <%= link_to t('excel_format'), problem_rejections_path(@problem, :format => :xls) %>
+</p>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'Back', @problem %> |
-<%= link_to 'All Rejections', rejections_path %>
+<%= link_to t('back'), @problem %> |
+<%= link_to t('rejections.index.all'), rejections_path %>

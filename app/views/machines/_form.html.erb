@@ -1,0 +1,19 @@
+<% form_for(form_object) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </p>
+  <p>
+    <%= f.label :availableTime %><br />
+    <%= f.text_field :availableTime %>
+  </p>
+  <p>
+    <%= f.label :totalHeaders %><br />
+    <%= f.text_field :totalHeaders %>
+  </p>
+  <p>
+    <%= f.submit t('send') %>
+  </p>
+<% end %>

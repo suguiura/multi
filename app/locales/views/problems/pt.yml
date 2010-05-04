@@ -1,0 +1,11 @@
+pt:
+  problems:
+    index:
+      header: 'Lista de Problemas'
+      new: 'Novo Problema'
+    edit:
+      header: 'Edição de Problema'
+    new:
+      header: 'Cadastro de Problema'
+    show:
+      rejections: 'Rejeições do Problema'

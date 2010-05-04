@@ -1,0 +1,11 @@
+pt:
+  activerecord:
+    models:
+      machine:
+        one: 'Máquina'
+        other: 'Máquinas'
+    attributes:
+      machine:
+        code: 'Código'
+        availableTime: 'Tempo disponível'
+        totalHeaders: 'Número de cabeçalhos'
