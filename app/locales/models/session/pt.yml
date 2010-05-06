@@ -8,4 +8,5 @@ pt:
       session:
         start: 'Início'
         end: 'Fim'
+        duration: 'Duração'
         machine_id: 'Máquina'

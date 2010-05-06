@@ -8,4 +8,11 @@ class Session < ActiveRecord::Base
   def machine_id()
     self.machine.id if self.machine
   end
+
+  before_save :calculate_duration
+  
+  private
+    def calculate_duration
+      self.duration = self.end - self.start
+    end
 end

@@ -69,12 +69,24 @@ pt:
         other: 'quase {{count}} anos'
     
     prompts:
-      year:   "Ano"
-      month:  "Mês"
-      day:    "Dia"
-      hour:   "Hora"
-      minute: "Minuto"
-      second: "Segundos"
+      year:
+        one: "1 Ano"
+        other: "{{count}} Anos"
+      month:
+        one: "1 Mês"
+        other: "{{count}} Meses"
+      day:
+        one: "1 Dia"
+        other: "{{count}} Dias"
+      hour:
+        one: "1 Hora"
+        other: "{{count}} Horas"
+      minute:
+        one: "1 Minuto"
+        other: "{{count}} Minutos"
+      second:
+       one: "1 Segundo"
+       other: "{{count}} Segundos"
 
   # numeros
   number:

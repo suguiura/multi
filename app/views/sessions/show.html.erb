@@ -12,6 +12,11 @@
 </p>
 
 <p>
+  <b><%=h Session.human_attribute_name(:duration) %>:</b>
+  <%=h DistanceInWords.from_seconds_verbose(@session.duration) %>
+</p>
+
+<p>
   <b><%=h Machine.human_name %>:</b>
   <%=h @session.machine.code %>
 </p>
