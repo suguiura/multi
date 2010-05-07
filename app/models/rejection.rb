@@ -17,4 +17,8 @@ class Rejection < ActiveRecord::Base
   def problem_id()
     self.problem.id if self.problem
   end
+  
+  def xls_column_names
+    self.class.column_names - ['created_at', 'updated_at']
+  end
 end

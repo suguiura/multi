@@ -10,7 +10,7 @@ class Machines::SessionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @sessions }
-      format.xls  { send_file XLS.render_xls(Session, @sessions), :filename => 'sessions_listing.xls', :type => "application/vnd.ms-excel" }
+      format.xls  { send_file XLS.render_xls(@sessions), :filename => 'sessions_listing.xls', :type => "application/vnd.ms-excel" }
     end
   end
 

@@ -8,6 +8,10 @@ class Session < ActiveRecord::Base
   def machine_id()
     self.machine.id if self.machine
   end
+  
+  def xls_column_names
+    self.class.column_names - ['created_at', 'updated_at']
+  end
 
   before_save :calculate_duration
   
