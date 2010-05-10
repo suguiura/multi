@@ -6,7 +6,7 @@ class Machine < ActiveRecord::Base
   validates_numericality_of :availableTime, :only_integer => true
   
   def total_session_time
-    self.sessions.sum("duration")
+    self.sessions.sum('strftime("%s",end) - strftime("%s",start)')
   end
   
   def xls_column_names
