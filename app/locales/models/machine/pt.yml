@@ -11,3 +11,5 @@ pt:
         totalHeaders: 'Número de cabeçalhos'
         total_session_time: 'Tempo total das sessões'
         average_session_time: 'Tempo médio das sessões'
+        average_work_time_per_day: 'Tempo médio de trabalho por dia'
+        utilization_percent_per_day: 'Percentual de utilização por dia'
