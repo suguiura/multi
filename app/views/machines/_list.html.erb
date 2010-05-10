@@ -6,6 +6,7 @@
     <th><%=h Machine.human_attribute_name(:totalHeaders) %></th>
     <th><%=h Machine.human_attribute_name(:availableTime) %></th>
     <th><%=h Machine.human_attribute_name(:total_session_time) %></th>
+    <th><%=h Machine.human_attribute_name(:average_session_time) %></th>
   </tr>
 
 <% @machines.each do |machine| %>
@@ -15,6 +16,7 @@
     <td><%=h machine.totalHeaders %></td>
     <td><%=h DistanceInWords.from_seconds machine.availableTime %></td>
     <td><%=h DistanceInWords.from_seconds machine.total_session_time %></td>
+    <td><%=h DistanceInWords.from_seconds machine.average_session_time %></td>
     <td><%= link_to t('show'), machine %></td>
     <td><%= link_to t('delete'), machine, :confirm => t('confirm'), :method => :delete %></td>
   </tr>

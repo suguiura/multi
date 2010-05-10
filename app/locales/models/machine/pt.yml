@@ -9,4 +9,5 @@ pt:
         code: 'Código'
         availableTime: 'Tempo disponível'
         totalHeaders: 'Número de cabeçalhos'
-        total_session_time: 'Tempo total das sessões
+        total_session_time: 'Tempo total das sessões'
+        average_session_time: 'Tempo médio das sessões'

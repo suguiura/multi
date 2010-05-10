@@ -9,6 +9,10 @@ class Machine < ActiveRecord::Base
     self.sessions.sum('strftime("%s",end) - strftime("%s",start)')
   end
   
+  def average_session_time
+    self.sessions.average('strftime("%s",end) - strftime("%s",start)')
+  end
+  
   def xls_column_names
     self.class.column_names + ['total_session_time'] - ['created_at', 'updated_at']
   end
