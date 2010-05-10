@@ -2,6 +2,8 @@ class Session < ActiveRecord::Base
   belongs_to :machine
   has_many :rejections, :dependent => :destroy
 
+  default_scope :select => '*, strftime("%s",end) - strftime("%s",start) as "duration"'
+
   def machine_id=(id)
     self.machine = Machine.find(id)
   end
@@ -12,11 +14,4 @@ class Session < ActiveRecord::Base
   def xls_column_names
     self.class.column_names - ['created_at', 'updated_at']
   end
-
-  before_save :calculate_duration
-  
-  private
-    def calculate_duration
-      self.duration = self.end - self.start
-    end
 end
