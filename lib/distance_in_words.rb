@@ -30,6 +30,7 @@ class DistanceInWords
     result << "%dd" % distance[:day] if distance[:day] > 0
     result << (distance[:day] > 0 ? "%02dh" : distance[:hour] > 0 ? "%dh" : "") % distance[:hour]
     result << "%02dm" % distance[:minute]
+    result << "%02ds" % distance[:second] if distance[:second] > 0
     result
   end
 end
