@@ -5,6 +5,10 @@ class Machine < ActiveRecord::Base
   validates_numericality_of :totalHeaders, :only_integer => true
   validates_numericality_of :availableTime, :only_integer => true
   
+  composed_of :available_time_select, :class_name => 'Time',
+    :mapping => %w(availableTime to_i),
+    :constructor => Proc.new { |x| Time.at(x || 0) }
+  
   def total_session_time
     total = 0
     self.sessions.each { |session| total += session.duration.to_i }
@@ -12,17 +16,17 @@ class Machine < ActiveRecord::Base
   end
   
   def average_session_time
-    total_session_time / self.sessions.size
+    return total_session_time / self.sessions.size if self.sessions.size > 0
   end
   
   def average_work_time_per_day
     set = Set.new
     self.sessions.each { |session| set << session.start.to_date }
-    total_session_time / set.size
+    return total_session_time / set.size if set.size > 0
   end
   
   def utilization_percent_per_day
-    average_work_time_per_day.to_f / availableTime
+    return average_work_time_per_day.to_f / availableTime if availableTime > 0
   end
   
   def xls_column_names

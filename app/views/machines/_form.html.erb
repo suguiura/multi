@@ -5,14 +5,17 @@
     <%= f.label :code %><br />
     <%= f.text_field :code %>
   </p>
-  <p>
-    <%= f.label :availableTime %><br />
-    <%= f.text_field :availableTime %>
-  </p>
+  
   <p>
     <%= f.label :totalHeaders %><br />
     <%= f.text_field :totalHeaders %>
   </p>
+  
+  <p>
+    <%= f.label :availableTime %><br />
+    <%= f.time_select :available_time_select, :minute_step => 15, :default => '0' %>
+  </p>
+  
   <p>
     <%= f.submit t('send') %>
   </p>
