@@ -11,8 +11,7 @@
   </p>
   <p>
     <%= f.label :machine %><br />
-    <%= f.hidden_field :machine_id %>
-    <%= text_field_tag "machine_code", @session.machine.code, :disabled => true %>
+    <%= f.collection_select :machine_id, Machine.all, :id, :code, {:disabled => lambda{|machine| machine != @session.machine }} %>
   </p>
   <p>
     <%= f.submit t('send') %>

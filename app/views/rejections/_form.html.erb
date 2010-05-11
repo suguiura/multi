@@ -7,14 +7,11 @@
   </p>
   <p>
     <%= f.label :session %><br />
-    <%= f.hidden_field :session_id %>
-    <%= text_field_tag "session", @rejection.session.id, :disabled => true %>
+    <%= f.collection_select :session_id, Session.all, :id, :id, {:disabled => lambda{|session| session != @rejection.session }} %>
   </p>
   <p>
     <%= f.label :problem %><br />
-    <% Problem.all.each do |problem| %>
-      <%= f.radio_button :problem_id, problem.id, :checked => true %> <%= problem.name %><br />
-    <% end %>
+    <%= f.collection_select :problem_id, Problem.all, :id, :name %>
   </p>
   <p>
     <%= f.submit t('send') %>
