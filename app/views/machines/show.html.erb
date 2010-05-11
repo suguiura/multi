@@ -7,13 +7,33 @@
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:availableTime) %>:</b>
-  <%=h @machine.availableTime %>
+  <b><%=h Machine.human_attribute_name(:totalHeaders) %>:</b>
+  <%=h @machine.totalHeaders %>
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:totalHeaders) %>:</b>
-  <%=h @machine.totalHeaders %>
+  <b><%=h Machine.human_attribute_name(:availableTime) %>:</b>
+  <%=h DistanceInWords.from_seconds @machine.availableTime %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:total_session_time) %>:</b>
+  <%=h DistanceInWords.from_seconds @machine.total_session_time %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:average_session_time) %>:</b>
+  <%=h DistanceInWords.from_seconds @machine.average_session_time %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:average_work_time_per_day) %>:</b>
+  <%=h DistanceInWords.from_seconds @machine.average_work_time_per_day %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:utilization_percent_per_day) %>:</b>
+  <%=h @machine.utilization_percent_per_day %>
 </p>
 
 <p>
