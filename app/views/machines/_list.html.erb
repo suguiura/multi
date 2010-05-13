@@ -6,8 +6,6 @@
     <th><%=h Machine.human_attribute_name(:totalHeaders) %></th>
     <th><%=h Machine.human_attribute_name(:speed) %></th>
     <th><%=h Machine.human_attribute_name(:availableTime) %></th>
-    <th><%=h Machine.human_attribute_name(:total_session_time) %></th>
-    <th><%=h Machine.human_attribute_name(:average_session_time) %></th>
     <th><%=h Machine.human_attribute_name(:average_work_time_per_day) %></th>
     <th><%=h Machine.human_attribute_name(:utilization_percent_per_day) %></th>
   </tr>
@@ -19,8 +17,6 @@
     <td><%=h machine.totalHeaders %></td>
     <td><%=h machine.speed %></td>
     <td><%=h DistanceInWords.from_seconds machine.availableTime %></td>
-    <td><%=h DistanceInWords.from_seconds machine.total_session_time %></td>
-    <td><%=h DistanceInWords.from_seconds machine.average_session_time %></td>
     <td><%=h DistanceInWords.from_seconds machine.average_work_time_per_day %></td>
     <td><%=h machine.utilization_percent_per_day %></td>
     <td><%= link_to t('show'), machine %></td>
