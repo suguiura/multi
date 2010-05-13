@@ -7,11 +7,17 @@ pt:
     attributes:
       machine:
         code: 'Código'
-        speed: 'Velocidade'
+        standard_speed: 'Velocidade padrão'
+        production_amount: 'Produção total'
+        productive_days: 'Dias produtivos'
         availableTime: 'Tempo disponível'
         totalHeaders: 'Número de cabeçalhos'
-        total_session_time: 'Tempo total das sessões'
-        average_session_time: 'Tempo médio de uma sessão'
-        average_work_time_per_day: 'Tempo médio do trabalho de um dia'
-        utilization_percent_per_day: 'Percentual de utilização por dia'
+        total_session_time: 'Soma da duração de todos os trabalhos'
+        session_time_average: 'Média do tempo de uma sessão'
+        daily_session_time_average: 'Média do tempo de trabalho diário'
+        utilization_percent: 'Percentual de utilização'
+        daily_production_average: 'Média da produção diária'
+        daily_productive_time_average: 'Média do tempo produtivo diária'
+        eficiency_percent: 'Percentual de eficiência'
+        productivity_percent: 'Percentual de produtividade'
         

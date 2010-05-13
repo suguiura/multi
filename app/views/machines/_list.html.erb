@@ -4,10 +4,9 @@
     <th><%=h Machine.human_attribute_name(:id) %></th>
     <th><%=h Machine.human_attribute_name(:code) %></th>
     <th><%=h Machine.human_attribute_name(:totalHeaders) %></th>
-    <th><%=h Machine.human_attribute_name(:speed) %></th>
+    <th><%=h Machine.human_attribute_name(:standard_speed) %></th>
     <th><%=h Machine.human_attribute_name(:availableTime) %></th>
-    <th><%=h Machine.human_attribute_name(:average_work_time_per_day) %></th>
-    <th><%=h Machine.human_attribute_name(:utilization_percent_per_day) %></th>
+    <th><%=h Machine.human_attribute_name(:utilization_percent) %></th>
   </tr>
 
 <% @machines.each do |machine| %>
@@ -15,10 +14,9 @@
     <td><%=h machine.id %></td>
     <td><%=h machine.code %></td>
     <td><%=h machine.totalHeaders %></td>
-    <td><%=h machine.speed %></td>
+    <td><%=h machine.standard_speed %></td>
     <td><%=h DistanceInWords.from_seconds machine.availableTime %></td>
-    <td><%=h DistanceInWords.from_seconds machine.average_work_time_per_day %></td>
-    <td><%=h machine.utilization_percent_per_day %></td>
+    <td><%=h machine.utilization_percent %></td>
     <td><%= link_to t('show'), machine %></td>
     <td><%= link_to t('delete'), machine, :confirm => t('confirm'), :method => :delete %></td>
   </tr>

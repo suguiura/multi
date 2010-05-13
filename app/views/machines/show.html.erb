@@ -12,8 +12,18 @@
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:speed) %>:</b>
-  <%=h @machine.speed %>
+  <b><%=h Machine.human_attribute_name(:standard_speed) %>:</b>
+  <%=h @machine.standard_speed %> unidades por segundo
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:production_amount) %>:</b>
+  <%=h @machine.production_amount %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:productive_days) %>:</b>
+  <%=h @machine.productive_days %>
 </p>
 
 <p>
@@ -27,18 +37,38 @@
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:average_session_time) %>:</b>
-  <%=h DistanceInWords.from_seconds @machine.average_session_time %>
+  <b><%=h Machine.human_attribute_name(:session_time_average) %>:</b>
+  <%=h DistanceInWords.from_seconds @machine.session_time_average %>
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:average_work_time_per_day) %>:</b>
-  <%=h DistanceInWords.from_seconds @machine.average_work_time_per_day %>
+  <b><%=h Machine.human_attribute_name(:daily_session_time_average) %>:</b>
+  <%=h DistanceInWords.from_seconds @machine.daily_session_time_average %>
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:utilization_percent_per_day) %>:</b>
-  <%=h @machine.utilization_percent_per_day %>
+  <b><%=h Machine.human_attribute_name(:utilization_percent) %>:</b>
+  <%=h @machine.utilization_percent %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:daily_production_average) %>:</b>
+  <%=h @machine.daily_production_average %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:daily_productive_time_average) %>:</b>
+  <%=h DistanceInWords.from_seconds @machine.daily_productive_time_average %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:eficiency_percent) %>:</b>
+  <%=h @machine.eficiency_percent %>
+</p>
+
+<p>
+  <b><%=h Machine.human_attribute_name(:productivity_percent) %>:</b>
+  <%=h @machine.productivity_percent %>
 </p>
 
 <p>
