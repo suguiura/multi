@@ -12,6 +12,11 @@
 </p>
 
 <p>
+  <b><%=h Machine.human_attribute_name(:speed) %>:</b>
+  <%=h @machine.speed %>
+</p>
+
+<p>
   <b><%=h Machine.human_attribute_name(:availableTime) %>:</b>
   <%=h DistanceInWords.from_seconds @machine.availableTime %>
 </p>

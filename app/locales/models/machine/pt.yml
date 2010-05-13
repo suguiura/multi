@@ -7,9 +7,11 @@ pt:
     attributes:
       machine:
         code: 'Código'
+        speed: 'Velocidade'
         availableTime: 'Tempo disponível'
         totalHeaders: 'Número de cabeçalhos'
         total_session_time: 'Tempo total das sessões'
         average_session_time: 'Tempo médio de uma sessão'
         average_work_time_per_day: 'Tempo médio do trabalho de um dia'
         utilization_percent_per_day: 'Percentual de utilização por dia'
+        
