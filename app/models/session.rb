@@ -4,6 +4,10 @@ class Session < ActiveRecord::Base
 
   default_scope :select => '*, strftime("%s",end) - strftime("%s",start) as "duration"'
 
+  def production
+    1 # mock
+  end
+
   def machine_id=(id)
     self.machine = Machine.find(id)
   end
