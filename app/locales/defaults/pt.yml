@@ -14,9 +14,9 @@ pt:
   
   time:
     formats:
-      default: "%A, %d de %B de %Y, %H:%M"
-      short: "%d/%m, %H:%M"
-      long: "%A, %d de %B de %Y, %H:%M"
+      default: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      long: "%A, %d de %B de %Y, %H:%M h"
     am: ''
     pm: ''
   
@@ -69,24 +69,12 @@ pt:
         other: 'quase {{count}} anos'
     
     prompts:
-      year:
-        one: "1 Ano"
-        other: "{{count}} Anos"
-      month:
-        one: "1 Mês"
-        other: "{{count}} Meses"
-      day:
-        one: "1 Dia"
-        other: "{{count}} Dias"
-      hour:
-        one: "1 Hora"
-        other: "{{count}} Horas"
-      minute:
-        one: "1 Minuto"
-        other: "{{count}} Minutos"
-      second:
-       one: "1 Segundo"
-       other: "{{count}} Segundos"
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundos"
 
   # numeros
   number:
@@ -109,8 +97,11 @@ pt:
         delimiter: '.'
     human:
       format:
-        precision: 1
+        precision: 2
         delimiter: '.'
+        significant: true
+        strip_unsignificant_zeros: true
+      # number_to_human_size()
       storage_units:
         format: "%n %u"
         units:
@@ -121,6 +112,25 @@ pt:
           mb: "MB"
           gb: "GB"
           tb: "TB"
+      # number_to_human()
+      # new in rails 3: please add to other locales
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""     
+          thousand: "mil"
+          million:
+            one: milhão
+            other: milhões
+          billion:
+            one: bilhão
+            other: bilhões
+          trillion:
+            one: trilhão
+            other: trilhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
 
   # Usado no Array.to_sentence
   support:
@@ -150,6 +160,7 @@ pt:
         wrong_length: "não possui o tamanho esperado ({{count}} caracteres)"
         taken: "já está em uso"
         not_a_number: "não é um número"
+        not_an_integer: "não é um número inteiro"
         greater_than: "deve ser maior do que {{count}}"
         greater_than_or_equal_to: "deve ser maior ou igual a {{count}}"
         equal_to: "deve ser igual a {{count}}"

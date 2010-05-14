@@ -51,11 +51,11 @@ class Machine < ActiveRecord::Base
     standard_speed > 0 ? daily_production_average.to_f / standard_speed : 0
   end
   
-  def eficiency_percent
+  def eficiency_percent # derived attribute
     daily_productive_time_average.to_f / daily_session_time_average
   end
   
-  def productivity_percent
+  def productivity_percent # derived attribute
     daily_productive_time_average.to_f / availableTime
   end
   

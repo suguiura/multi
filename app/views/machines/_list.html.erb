@@ -15,7 +15,7 @@
     <td><%=h machine.code %></td>
     <td><%=h machine.totalHeaders %></td>
     <td><%=h machine.standard_speed %></td>
-    <td><%=h DistanceInWords.from_seconds machine.availableTime %></td>
+    <td><%=h machine.availableTime.seconds_to_short_words %></td>
     <td><%=h machine.utilization_percent %></td>
     <td><%= link_to t('show'), machine %></td>
     <td><%= link_to t('delete'), machine, :confirm => t('confirm'), :method => :delete %></td>
