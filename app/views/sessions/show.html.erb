@@ -13,7 +13,7 @@
 
 <p>
   <b><%=h Session.human_attribute_name(:duration) %>:</b>
-  <%=h DistanceInWords.from_seconds_verbose(@session.duration) %>
+  <%=h @session.duration.seconds_to_long_words %>
 </p>
 
 <p>
