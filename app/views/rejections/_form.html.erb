@@ -6,11 +6,11 @@
     <%= f.text_field :totalRejected %>
   </p>
   <p>
-    <%= f.label :session %><br />
+    <%= f.label :session, Session.human_name %><br />
     <%= f.collection_select :session_id, Session.all, :id, :id, {:disabled => lambda{|session| session != @rejection.session }} %>
   </p>
   <p>
-    <%= f.label :problem %><br />
+    <%= f.label :problem, Problem.human_name %><br />
     <%= f.collection_select :problem_id, Problem.all, :id, :name %>
   </p>
   <p>
