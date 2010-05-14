@@ -2,7 +2,9 @@ class Session < ActiveRecord::Base
   belongs_to :machine
   has_many :rejections, :dependent => :destroy
 
-  default_scope :select => '*, strftime("%s",end) - strftime("%s",start) as "duration"'
+  def duration
+    self.end - self.start
+  end
 
   def production
     1 # mock
