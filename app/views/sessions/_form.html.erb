@@ -11,7 +11,7 @@
   </p>
   <p>
     <%= f.label :number_of_packages %><br />
-    <%= f.select :number_of_packages, (1..@session.machine.totalHeaders).to_a %>
+    <%= f.select :number_of_packages, (1..@session.machine.number_of_heads).to_a %>
   </p>
   <p>
     <%= f.label :machine, Machine.human_name %><br />

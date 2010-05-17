@@ -3,7 +3,7 @@
   <tr>
     <th><%=h Machine.human_attribute_name(:id) %></th>
     <th><%=h Machine.human_attribute_name(:code) %></th>
-    <th><%=h Machine.human_attribute_name(:totalHeaders) %></th>
+    <th><%=h Machine.human_attribute_name(:number_of_heads) %></th>
     <th><%=h Machine.human_attribute_name(:standard_speed) %></th>
     <th><%=h Machine.human_attribute_name(:availableTime) %></th>
     <th><%=h Machine.human_attribute_name(:utilization_percent) %></th>
@@ -13,7 +13,7 @@
   <tr>
     <td><%=h machine.id %></td>
     <td><%=h machine.code %></td>
-    <td><%=h machine.totalHeaders %></td>
+    <td><%=h machine.number_of_heads %></td>
     <td><%=h machine.standard_speed %></td>
     <td><%=h machine.availableTime.seconds_to_short_words %></td>
     <td><%=h machine.utilization_percent %></td>

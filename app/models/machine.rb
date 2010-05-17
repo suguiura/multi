@@ -1,9 +1,9 @@
 class Machine < ActiveRecord::Base
   has_many :sessions, :dependent => :destroy
   
-  validates_presence_of :code, :totalHeaders, :standard_speed
+  validates_presence_of :code, :number_of_heads, :standard_speed
   validates_numericality_of :standard_speed
-  validates_numericality_of :totalHeaders, :only_integer => true
+  validates_numericality_of :number_of_heads, :only_integer => true
   validates_numericality_of :availableTime, :only_integer => true
   
   composed_of :available_time_select, :class_name => 'Time',
