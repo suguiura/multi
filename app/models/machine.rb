@@ -4,10 +4,10 @@ class Machine < ActiveRecord::Base
   validates_presence_of :code, :number_of_heads, :standard_speed
   validates_numericality_of :standard_speed
   validates_numericality_of :number_of_heads, :only_integer => true
-  validates_numericality_of :availableTime, :only_integer => true
+  validates_numericality_of :avaiable_seconds_per_day, :only_integer => true
   
   composed_of :available_time_select, :class_name => 'Time',
-    :mapping => %w(availableTime to_i),
+    :mapping => %w(avaiable_seconds_per_day to_i),
     :constructor => Proc.new { |x| Time.at(x || 0) }
 
 
@@ -39,7 +39,7 @@ class Machine < ActiveRecord::Base
   end
   
   def utilization_percent # derived attribute
-    availableTime > 0 ? daily_session_time_average.to_f / availableTime : 0
+    avaiable_seconds_per_day > 0 ? daily_session_time_average.to_f / avaiable_seconds_per_day : 0
   end
   
   def daily_production_average # derived attribute
@@ -56,7 +56,7 @@ class Machine < ActiveRecord::Base
   end
   
   def productivity_percent # derived attribute
-    daily_productive_time_average.to_f / availableTime
+    daily_productive_time_average.to_f / avaiable_seconds_per_day
   end
   
   def xls_column_names

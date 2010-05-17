@@ -10,7 +10,7 @@ pt:
         standard_speed: 'Velocidade padrão'
         production_amount: 'Produção total'
         productive_days: 'Dias produtivos'
-        availableTime: 'Tempo disponível'
+        avaiable_seconds_per_day: 'Tempo disponível'
         number_of_heads: 'Número de cabeçalhos'
         total_session_time: 'Soma da duração de todos os trabalhos'
         session_time_average: 'Média do tempo de uma sessão'
