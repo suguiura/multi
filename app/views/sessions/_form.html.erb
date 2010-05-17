@@ -10,6 +10,10 @@
     <%= f.time_select :end %>
   </p>
   <p>
+    <%= f.label :number_of_packages %><br />
+    <%= f.select :number_of_packages, (1..@session.machine.totalHeaders).to_a %>
+  </p>
+  <p>
     <%= f.label :machine, Machine.human_name %><br />
     <%= f.collection_select :machine_id, Machine.all, :id, :code, {:disabled => lambda{|machine| machine != @session.machine }} %>
   </p>

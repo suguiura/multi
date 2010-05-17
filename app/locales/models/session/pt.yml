@@ -10,3 +10,4 @@ pt:
         end: 'Fim'
         duration: 'Duração'
         machine_id: 'Máquina'
+        number_of_packages: 'Número de pacotes'
