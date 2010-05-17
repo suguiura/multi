@@ -1,0 +1,12 @@
+pt:
+  products:
+    index:
+      header: 'Lista de produtos'
+      new: 'Nova produto'
+      all: 'Todos os produtos'
+    new:
+      header: 'Cadastro de novo produto'
+    edit:
+      header: 'Edição de produto'
+    show:
+      sessions: 'Sessões do produto'
