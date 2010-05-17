@@ -1,6 +1,7 @@
 
 <table>
   <tr>
+    <th><%=h Product.human_attribute_name(:name) %></th>
     <th><%=h Product.human_attribute_name(:board_type) %></th>
     <th><%=h Product.human_attribute_name(:number_of_holes_per_board) %></th>
     <th><%=h Product.human_attribute_name(:number_of_boards_per_package) %></th>
@@ -9,6 +10,7 @@
 
 <% @products.each do |product| %>
   <tr>
+    <td><%=h product.name %></td>
     <td><%=h product.board_type %></td>
     <td><%=h product.number_of_holes_per_board %></td>
     <td><%=h product.number_of_boards_per_package %></td>

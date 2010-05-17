@@ -6,6 +6,7 @@
     <th><%=h Session.human_attribute_name(:end) %></th>
     <th><%=h Session.human_attribute_name(:duration) %></th>
     <th><%=h Machine.human_name %></th>
+    <th><%=h Product.human_name %></th>
   </tr>
 
 <% @sessions.each do |session| %>
@@ -15,6 +16,7 @@
     <td><%=h l session.end, :format => :short %></td>
     <td style="text-align: right;"><%=h session.duration.seconds_to_short_words %></td>
     <td><%= link_to session.machine.code, session.machine %></td>
+    <td><%= link_to session.product.name, session.product %></td>
     <td><%= link_to t('show'), session %></td>
     <td><%= link_to t('delete'), session, :confirm => t('confirm'), :method => :delete %></td>
   </tr>

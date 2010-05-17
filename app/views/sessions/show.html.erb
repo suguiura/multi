@@ -22,6 +22,11 @@
 </p>
 
 <p>
+  <b><%=h Product.human_name %>:</b>
+  <%=h @session.product.name %>
+</p>
+
+<p>
   <%= link_to t('.rejections'), session_rejections_path(@session) %>
 </p>
 

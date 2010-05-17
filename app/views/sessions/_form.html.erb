@@ -18,6 +18,10 @@
     <%= f.collection_select :machine_id, Machine.all, :id, :code, {:disabled => lambda{|machine| machine != @session.machine }} %>
   </p>
   <p>
+    <%= f.label :product, Product.human_name %><br />
+    <%= f.collection_select :product_id, Product.all, :id, :name %>
+  </p>
+  <p>
     <%= f.submit t('send') %>
   </p>
 <% end %>
