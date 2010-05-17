@@ -17,6 +17,11 @@
 </p>
 
 <p>
+  <b><%=h Session.human_attribute_name(:number_of_packages) %>:</b>
+  <%=h @session.number_of_packages %>
+</p>
+
+<p>
   <b><%=h Machine.human_name %>:</b>
   <%=h @session.machine.code %>
 </p>
