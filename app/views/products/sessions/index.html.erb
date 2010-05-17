@@ -1,0 +1,15 @@
+<h1><%= t('sessions.index.header') %> (<%= Product.human_name %>: <%= link_to @product.id, @product %>)</h1>
+
+<%= render :partial => "/sessions/list" %>
+
+<% unless @sessions.empty? %>
+<p>
+  <%= link_to t('excel_format'), product_sessions_path(@product, :format => :xls) %>
+</p>
+<% end %>
+
+<p>
+  <%= link_to t('back'), @product %> |
+  <%= link_to t('sessions.index.all'), sessions_path %>
+</p>
+
