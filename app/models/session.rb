@@ -14,8 +14,15 @@ class Session < ActiveRecord::Base
   def machine_id=(id)
     self.machine = Machine.find(id)
   end
-  def machine_id()
+  def machine_id
     self.machine.id if self.machine
+  end
+
+  def product_id=(id)
+    self.product = Product.find(id)
+  end
+  def product_id
+    self.product.id if self.product
   end
   
   def xls_column_names
