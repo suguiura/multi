@@ -1,10 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :products
-
-
 
 #  map.resources :operators
 
+  map.resources :products do |product|
+    product.resources :sessions, :namespace => "products/", :only => [ :index ]
+  end
   map.resources :rejections, :only => [ :index, :destroy ]
   map.resources :problems do |problem|
     problem.resources :rejections, :namespace => "problems/", :only => [ :index, :destroy ]
