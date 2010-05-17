@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  board_type: 1
+  number_of_holes_per_board: 1
+  number_of_boards_per_package: 1
+  number_of_packages: 1
+
+two:
+  board_type: 1
+  number_of_holes_per_board: 1
+  number_of_boards_per_package: 1
+  number_of_packages: 1

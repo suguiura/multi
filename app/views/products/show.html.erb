@@ -1,0 +1,23 @@
+<p>
+  <b>Board type:</b>
+  <%=h @product.board_type %>
+</p>
+
+<p>
+  <b>Number of holes per board:</b>
+  <%=h @product.number_of_holes_per_board %>
+</p>
+
+<p>
+  <b>Number of boards per package:</b>
+  <%=h @product.number_of_boards_per_package %>
+</p>
+
+<p>
+  <b>Number of packages:</b>
+  <%=h @product.number_of_packages %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
