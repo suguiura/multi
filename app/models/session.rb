@@ -1,5 +1,6 @@
 class Session < ActiveRecord::Base
   belongs_to :machine
+  belongs_to :product
   has_many :rejections, :dependent => :destroy
 
   def duration
