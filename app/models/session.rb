@@ -7,8 +7,12 @@ class Session < ActiveRecord::Base
     self.end - self.start
   end
 
-  def production
-    1 # mock
+  def number_of_boards
+    self.product.number_of_boards_per_package * self.number_of_packages
+  end
+
+  def number_of_holes
+    self.product.number_of_holes_per_board * self.number_of_boards
   end
 
   def machine_id=(id)

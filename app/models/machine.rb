@@ -19,7 +19,7 @@ class Machine < ActiveRecord::Base
   
   def production_amount # derived attribute
     total = 0
-    self.sessions.each { |session| total += session.production.to_i }
+    self.sessions.each { |session| total += session.number_of_packages }
     total
   end
   
