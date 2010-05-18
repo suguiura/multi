@@ -3,7 +3,6 @@
   <tr>
     <th><%=h Session.human_attribute_name(:id) %></th>
     <th><%=h Session.human_attribute_name(:start) %></th>
-    <th><%=h Session.human_attribute_name(:end) %></th>
     <th><%=h Session.human_attribute_name(:duration) %></th>
     <th><%=h Session.human_attribute_name(:number_of_packages) %></th>
     <th><%=h Machine.human_name %></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%=h session.id %></td>
     <td><%=h l session.start, :format => :short %></td>
-    <td><%=h l session.end, :format => :short %></td>
     <td style="text-align: right;"><%=h session.duration.seconds_to_short_words %></td>
     <td><%=h session.number_of_packages %></td>
     <td><%= link_to session.machine.code, session.machine %></td>

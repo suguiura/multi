@@ -7,11 +7,6 @@
 </p>
 
 <p>
-  <b><%=h Session.human_attribute_name(:end) %>:</b>
-  <%=h @session.end %>
-</p>
-
-<p>
   <b><%=h Session.human_attribute_name(:duration) %>:</b>
   <%=h @session.duration.seconds_to_long_words %>
 </p>

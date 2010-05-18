@@ -2,10 +2,10 @@ class Session < ActiveRecord::Base
   belongs_to :machine
   belongs_to :product
   has_many :rejections, :dependent => :destroy
-
-  def duration
-    self.end - self.start
-  end
+  
+  composed_of :duration_select, :class_name => 'Time',
+    :mapping => %w(duration to_i),
+    :constructor => Proc.new { |x| Time.at(x || 0) }
 
   def number_of_boards
     self.product.number_of_boards_per_package * self.number_of_packages
