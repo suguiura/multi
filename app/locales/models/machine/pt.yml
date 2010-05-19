@@ -7,7 +7,7 @@ pt:
     attributes:
       machine:
         code: 'Código'
-        standard_speed: 'Velocidade padrão'
+        standard_number_of_packages_per_second: 'Número de pacotes por segundo padrão'
         number_of_packages: 'Total de pacotes'
         productive_days: 'Dias produtivos'
         avaiable_seconds_per_day: 'Tempo disponível'

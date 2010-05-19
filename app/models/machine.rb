@@ -1,9 +1,15 @@
 class Machine < ActiveRecord::Base
   has_many :sessions, :dependent => :destroy
   
-  validates_presence_of :code, :number_of_heads, :standard_speed
-  validates_numericality_of :standard_speed
+  validates_presence_of :code, :number_of_heads, :standard_number_of_packages_per_second
+
+  validates_presence_of :standard_number_of_packages_per_second
+  validates_numericality_of :standard_number_of_packages_per_second
+
+  validates_presence_of :number_of_heads
   validates_numericality_of :number_of_heads, :only_integer => true
+
+  validates_presence_of :avaiable_seconds_per_day
   validates_numericality_of :avaiable_seconds_per_day, :only_integer => true
   
   composed_of :available_time_select, :class_name => 'Time',
@@ -48,7 +54,7 @@ class Machine < ActiveRecord::Base
   end
   
   def daily_productive_time_average # derived attribute
-    standard_speed > 0 ? daily_number_of_packages_average.to_f / standard_speed : 0
+    standard_number_of_packages_per_second > 0 ? daily_number_of_packages_average.to_f / standard_number_of_packages_per_second : 0
   end
   
   def eficiency_percent # derived attribute
