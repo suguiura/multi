@@ -17,7 +17,7 @@ class Machine < ActiveRecord::Base
     total
   end
   
-  def production_amount # derived attribute
+  def number_of_packages # derived attribute
     total = 0
     self.sessions.each { |session| total += session.number_of_packages }
     total
@@ -42,13 +42,13 @@ class Machine < ActiveRecord::Base
     avaiable_seconds_per_day > 0 ? daily_session_time_average.to_f / avaiable_seconds_per_day : 0
   end
   
-  def daily_production_average # derived attribute
+  def daily_number_of_packages_average # derived attribute
     days = self.productive_days
-    days > 0 ? production_amount.to_f / days : 0
+    days > 0 ? number_of_packages.to_f / days : 0
   end
   
   def daily_productive_time_average # derived attribute
-    standard_speed > 0 ? daily_production_average.to_f / standard_speed : 0
+    standard_speed > 0 ? daily_number_of_packages_average.to_f / standard_speed : 0
   end
   
   def eficiency_percent # derived attribute

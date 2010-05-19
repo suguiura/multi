@@ -7,3 +7,6 @@ pt:
   confirm: 'Tem certeza?'
   excel_format: 'Formato Excel'
   
+  view:
+    percents: 'Percentuais'
+    time_averages: 'Médias de tempo'

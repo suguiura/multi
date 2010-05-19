@@ -17,8 +17,8 @@
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:production_amount) %>:</b>
-  <%=h @machine.production_amount %>
+  <b><%=h Machine.human_attribute_name(:number_of_packages) %>:</b>
+  <%=h @machine.number_of_packages %>
 </p>
 
 <p>
@@ -32,8 +32,8 @@
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:daily_production_average) %>:</b>
-  <%=h @machine.daily_production_average %>
+  <b><%=h Machine.human_attribute_name(:daily_number_of_packages_average) %>:</b>
+  <%=h @machine.daily_number_of_packages_average %>
 </p>
 
 <p>
@@ -42,24 +42,28 @@
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:daily_session_time_average) %>:</b>
+  <b><%= t('view.time_averages') %></b>
+<br>
+  <%=h Machine.human_attribute_name(:daily_session_time_average) %>:
   <%=h @machine.daily_session_time_average.seconds_to_short_words %>
 <br>
-  <b><%=h Machine.human_attribute_name(:session_time_average) %>:</b>
+  <%=h Machine.human_attribute_name(:session_time_average) %>:
   <%=h @machine.session_time_average.seconds_to_short_words %>
 <br>
-  <b><%=h Machine.human_attribute_name(:daily_productive_time_average) %>:</b>
+  <%=h Machine.human_attribute_name(:daily_productive_time_average) %>:
   <%=h @machine.daily_productive_time_average.seconds_to_short_words %>
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:utilization_percent) %>:</b>
+  <b><%= t('view.percents') %></b>
+<br>
+  <%=h Machine.human_attribute_name(:utilization_percent) %>:
   <%=h @machine.utilization_percent %>
 <br>
-  <b><%=h Machine.human_attribute_name(:eficiency_percent) %>:</b>
+  <%=h Machine.human_attribute_name(:eficiency_percent) %>:
   <%=h @machine.eficiency_percent %>
 <br>
-  <b><%=h Machine.human_attribute_name(:productivity_percent) %>:</b>
+  <%=h Machine.human_attribute_name(:productivity_percent) %>:
   <%=h @machine.productivity_percent %>
 </p>
 
