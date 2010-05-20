@@ -11,7 +11,7 @@ pt:
         number_of_packages: 'Total de pacotes'
         productive_days: 'Dias produtivos'
         avaiable_seconds_per_day: 'Tempo disponível'
-        number_of_heads: 'Número de cabeçalhos'
+        number_of_heads: 'Número de cabeçotes'
         total_session_time: 'Soma da duração de todos os trabalhos'
         session_time_average: 'Média do tempo de uma sessão'
         daily_session_time_average: 'Média do tempo de trabalho diário'
