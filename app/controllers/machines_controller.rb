@@ -15,6 +15,7 @@ class MachinesController < ApplicationController
   # GET /machines/1.xml
   def show
     @machine = Machine.find(params[:id])
+    @machine.session_condition = { :start_at => params[:start_at], :end_at => params[:end_at] } if params[:start_at] && params[:end_at]
 
     respond_to do |format|
       format.html # show.html.erb

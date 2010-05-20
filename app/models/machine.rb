@@ -19,24 +19,24 @@ class Machine < ActiveRecord::Base
 
   def total_session_time # derived attribute
     total = 0
-    self.sessions.each { |session| total += session.duration.to_i }
+    self.filtered_sessions.each { |session| total += session.duration.to_i }
     total
   end
   
   def number_of_packages # derived attribute
     total = 0
-    self.sessions.each { |session| total += session.number_of_packages }
+    self.filtered_sessions.each { |session| total += session.number_of_packages }
     total
   end
   
   def productive_days # derived attribute
     set = Set.new
-    self.sessions.each { |session| set << session.start.to_date }
+    self.filtered_sessions.each { |session| set << session.start.to_date }
     set.size
   end
   
   def session_time_average # derived attribute
-    return total_session_time / self.sessions.size if self.sessions.size > 0
+    return total_session_time / self.filtered_sessions.size if self.filtered_sessions.size > 0
   end
   
   def daily_session_time_average # derived attribute
@@ -67,5 +67,19 @@ class Machine < ActiveRecord::Base
   
   def xls_column_names
     self.class.column_names + ['total_session_time'] - ['created_at', 'updated_at']
+  end
+  
+  def session_condition=(hash)
+    @session_condition = hash
+  end
+  
+  def filtered_sessions
+    if @session_condition.nil?
+      self.sessions
+    else
+      start_at = @session_condition[:start_at]
+      end_at = @session_condition[:end_at]
+      self.sessions.date_range(start_at, end_at)
+    end
   end
 end

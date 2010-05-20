@@ -3,6 +3,10 @@ class Session < ActiveRecord::Base
   belongs_to :product
   has_many :rejections, :dependent => :destroy
   
+  named_scope :date_range, lambda { |start_at, end_at|
+      { :conditions => {:start => start_at..end_at} } unless start_at.nil? or end_at.nil?
+  }
+  
   composed_of :duration_select, :class_name => 'Time',
     :mapping => %w(duration to_i),
     :constructor => Proc.new { |x| Time.at(x || 0) }
