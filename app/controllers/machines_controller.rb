@@ -15,7 +15,16 @@ class MachinesController < ApplicationController
   # GET /machines/1.xml
   def show
     @machine = Machine.find(params[:id])
-    @machine.session_condition = { :start_at => params[:start_at], :end_at => params[:end_at] } if params[:start_at] && params[:end_at]
+    @clone_machine = @machine.clone
+    
+    #s = params[:start]
+    #e = params[:end]
+    #conditions = (s && e) ? {:start => s..e} : {}
+    #@clone_machine.sessions = @machine.sessions.find :all, :conditions => conditions
+
+    d = params[:date]
+    conditions = d ? {:start => d} : {}
+    @clone_machine.sessions = @machine.sessions.find :all, :conditions => conditions
 
     respond_to do |format|
       format.html # show.html.erb

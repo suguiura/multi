@@ -3,68 +3,68 @@
 
 <p>
   <b><%=h Machine.human_attribute_name(:code) %>:</b>
-  <%=h @machine.code %>
+  <%=h @clone_machine.code %>
 </p>
 
 <p>
   <b><%=h Machine.human_attribute_name(:number_of_heads) %>:</b>
-  <%=h @machine.number_of_heads %>
+  <%=h @clone_machine.number_of_heads %>
 </p>
 
 <p>
   <b><%=h Machine.human_attribute_name(:standard_number_of_packages_per_second) %>:</b>
-  <%=h @machine.standard_number_of_packages_per_second %>
+  <%=h @clone_machine.standard_number_of_packages_per_second %>
 </p>
 
 <p>
   <b><%=h Machine.human_attribute_name(:number_of_packages) %>:</b>
-  <%=h @machine.number_of_packages %>
+  <%=h @clone_machine.number_of_packages %>
 </p>
 
 <p>
   <b><%=h Machine.human_attribute_name(:productive_days) %>:</b>
-  <%=h @machine.productive_days %>
+  <%=h @clone_machine.productive_days %>
 </p>
 
 <p>
   <b><%=h Machine.human_attribute_name(:avaiable_seconds_per_day) %>:</b>
-  <%=h @machine.avaiable_seconds_per_day.seconds_to_short_words %>
+  <%=h @clone_machine.avaiable_seconds_per_day.seconds_to_short_words %>
 </p>
 
 <p>
   <b><%=h Machine.human_attribute_name(:daily_number_of_packages_average) %>:</b>
-  <%=h @machine.daily_number_of_packages_average %>
+  <%=h @clone_machine.daily_number_of_packages_average %>
 </p>
 
 <p>
   <b><%=h Machine.human_attribute_name(:total_session_time) %>:</b>
-  <%=h @machine.total_session_time.seconds_to_short_words %>
+  <%=h @clone_machine.total_session_time.seconds_to_short_words %>
 </p>
 
 <p>
   <b><%= t('view.time_averages') %></b>
 <br>
   <%=h Machine.human_attribute_name(:daily_session_time_average) %>:
-  <%=h @machine.daily_session_time_average.seconds_to_short_words %>
+  <%=h @clone_machine.daily_session_time_average.seconds_to_short_words %>
 <br>
   <%=h Machine.human_attribute_name(:session_time_average) %>:
-  <%=h @machine.session_time_average.seconds_to_short_words %>
+  <%=h @clone_machine.session_time_average.seconds_to_short_words %>
 <br>
   <%=h Machine.human_attribute_name(:daily_productive_time_average) %>:
-  <%=h @machine.daily_productive_time_average.seconds_to_short_words %>
+  <%=h @clone_machine.daily_productive_time_average.seconds_to_short_words %>
 </p>
 
 <p>
   <b><%= t('view.percents') %></b>
 <br>
   <%=h Machine.human_attribute_name(:utilization_percent) %>:
-  <%=h @machine.utilization_percent %>
+  <%=h @clone_machine.utilization_percent %>
 <br>
   <%=h Machine.human_attribute_name(:eficiency_percent) %>:
-  <%=h @machine.eficiency_percent %>
+  <%=h @clone_machine.eficiency_percent %>
 <br>
   <%=h Machine.human_attribute_name(:productivity_percent) %>:
-  <%=h @machine.productivity_percent %>
+  <%=h @clone_machine.productivity_percent %>
 </p>
 
 <p>
