@@ -44,7 +44,7 @@ class ProblemsController < ApplicationController
 
     respond_to do |format|
       if @problem.save
-        flash[:notice] = 'Problem was successfully created.'
+        flash[:notice] = t 'flash.notice.successfully.created', :object => Problem.human_name
         format.html { redirect_to(@problem) }
         format.xml  { render :xml => @problem, :status => :created, :location => @problem }
       else
@@ -61,7 +61,7 @@ class ProblemsController < ApplicationController
 
     respond_to do |format|
       if @problem.update_attributes(params[:problem])
-        flash[:notice] = 'Problem was successfully updated.'
+        flash[:notice] = t 'flash.notice.successfully.updated', :object => Problem.human_name
         format.html { redirect_to(@problem) }
         format.xml  { head :ok }
       else

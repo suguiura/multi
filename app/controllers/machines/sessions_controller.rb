@@ -33,7 +33,7 @@ class Machines::SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        flash[:notice] = 'Session was successfully created.'
+        flash[:notice] = t 'flash.notice.successfully.created', :object => Session.human_name
         format.html { redirect_to(@session) }
         format.xml  { render :xml => @session, :status => :created, :location => @session }
       else

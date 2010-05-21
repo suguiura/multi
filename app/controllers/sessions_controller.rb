@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.update_attributes(params[:session])
-        flash[:notice] = 'Session was successfully updated.'
+        flash[:notice] = t 'flash.notice.successfully.updated', :object => Session.human_name
         format.html { redirect_to(@session) }
         format.xml  { head :ok }
       else

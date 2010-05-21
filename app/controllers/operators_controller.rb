@@ -44,7 +44,7 @@ class OperatorsController < ApplicationController
 
     respond_to do |format|
       if @operator.save
-        flash[:notice] = 'Operator was successfully created.'
+        flash[:notice] = t 'flash.notice.successfully.created', :object => Operator.human_name
         format.html { redirect_to(@operator) }
         format.xml  { render :xml => @operator, :status => :created, :location => @operator }
       else
@@ -61,7 +61,7 @@ class OperatorsController < ApplicationController
 
     respond_to do |format|
       if @operator.update_attributes(params[:operator])
-        flash[:notice] = 'Operator was successfully updated.'
+        flash[:notice] = t 'flash.notice.successfully.updated', :object => Operator.human_name
         format.html { redirect_to(@operator) }
         format.xml  { head :ok }
       else

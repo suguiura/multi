@@ -33,7 +33,7 @@ class Sessions::RejectionsController < ApplicationController
 
     respond_to do |format|
       if @rejection.save
-        flash[:notice] = 'Rejection was successfully created.'
+        flash[:notice] = t 'flash.notice.successfully.created', :object => Rejection.human_name
         format.html { redirect_to(session_rejections_url(@rejection.session)) }
         format.xml  { render :xml => @rejection, :status => :created, :location => @rejection }
       else

@@ -55,7 +55,7 @@ class MachinesController < ApplicationController
 
     respond_to do |format|
       if @machine.save
-        flash[:notice] = 'Machine was successfully created.'
+        flash[:notice] = t 'flash.notice.successfully.created', :object => Machine.human_name
         format.html { redirect_to(@machine) }
         format.xml  { render :xml => @machine, :status => :created, :location => @machine }
       else
@@ -72,7 +72,7 @@ class MachinesController < ApplicationController
 
     respond_to do |format|
       if @machine.update_attributes(params[:machine])
-        flash[:notice] = 'Machine was successfully updated.'
+        flash[:notice] = t 'flash.notice.successfully.updated', :object => Machine.human_name
         format.html { redirect_to(@machine) }
         format.xml  { head :ok }
       else

@@ -1,0 +1,6 @@
+pt:
+  flash:
+    notice:
+      successfully:
+        created: "Criação de {{object}} realizada com sucesso."
+        updated: "Atualização de {{object}} realizada com sucesso."
