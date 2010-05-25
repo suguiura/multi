@@ -6,6 +6,7 @@ pt:
         other: 'Produtos'
     attributes:
       product:
+        name: 'Nome'
         board_type: 'Tipo de placa'
         number_of_holes_per_board: 'Número de furos por placa'
         number_of_boards_per_package: 'Número de placas por pacote'

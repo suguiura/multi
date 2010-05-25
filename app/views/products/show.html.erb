@@ -1,3 +1,10 @@
+<%= link_to t('edit'), edit_product_path(@product) %>
+
+<p>
+  <b><%=h Product.human_attribute_name(:name) %>:</b>
+  <%=h @product.name %>
+</p>
+
 <p>
   <b><%=h Product.human_attribute_name(:board_type) %>:</b>
   <%=h @product.board_type %>
@@ -19,5 +26,4 @@
 </p>
 
 
-<%= link_to t('edit'), edit_product_path(@product) %> |
 <%= link_to t('products.index.all'), products_path %>
