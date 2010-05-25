@@ -1,4 +1,5 @@
-<%= link_to t('edit'), edit_product_path(@product) %>
+<%= link_to t('edit'), edit_product_path(@product) %> |
+<%= link_to t('delete'), @product, :confirm => t('confirm'), :method => :delete %>
 
 <p>
   <b><%=h Product.human_attribute_name(:name) %>:</b>
