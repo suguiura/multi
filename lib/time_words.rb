@@ -4,7 +4,7 @@ module ActiveSupport
       module Conversions
 
         def seconds_to_time_hash
-         seconds = self.respond_to?("to_i") ? self.to_i : 0
+          seconds = self.respond_to?("to_i") && (self > 0) ? self.to_i : 0
           {
             :second => seconds % 1.minute,
             :minute => (seconds % 1.hour) / 1.minute,
