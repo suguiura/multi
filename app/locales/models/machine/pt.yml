@@ -10,7 +10,7 @@ pt:
         standard_number_of_packages_per_second: 'Número de pacotes por segundo padrão'
         number_of_packages: 'Total de pacotes'
         productive_days: 'Dias produtivos'
-        avaiable_seconds_per_day: 'Tempo disponível'
+        avaiable_seconds_per_day: 'Tempo disponível por dia'
         number_of_heads: 'Número de cabeçotes'
         total_session_time: 'Soma da duração de todos os trabalhos'
         session_time_average: 'Média do tempo de uma sessão'
