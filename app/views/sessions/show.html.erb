@@ -18,17 +18,17 @@
 
 <p>
   <b><%=h Machine.human_name %>:</b>
-  <%=h @session.machine.code %>
+  <%= link_to @session.machine.code, @session.machine %>
 </p>
 
 <p>
   <b><%=h Product.human_name %>:</b>
-  <%=h @session.product.name %>
+  <%= link_to @session.product.name, @session.product %>
 </p>
 
 <p>
   <b><%=h Operator.human_name %>:</b>
-  <%=h @session.operator.name %>
+  <%= link_to @session.operator.name, @session.operator %>
 </p>
 
 <p>
