@@ -6,6 +6,6 @@ pt:
         other: 'Rejeições'
     attributes:
       rejection:
-        totalRejected: 'Número de placas rejeitadas'
+        number_of_rejected_packages: 'Número de placas rejeitadas'
         session_id: 'Sessão'
         problem_id: 'Problema'

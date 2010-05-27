@@ -1,13 +1,13 @@
 <table>
   <tr>
-    <th><%=h Rejection.human_attribute_name(:totalRejected) %></th>
+    <th><%=h Rejection.human_attribute_name(:number_of_rejected_packages) %></th>
     <th><%=h Session.human_name %></th>
     <th><%=h Problem.human_name %></th>
   </tr>
 
 <% @rejections.each do |rejection| %>
   <tr>
-    <td><%=h rejection.totalRejected %></td>
+    <td><%=h rejection.number_of_rejected_packages %></td>
     <td><%= link_to rejection.session.start, rejection.session %></td>
     <td><%= link_to rejection.problem.name, rejection.problem %></td>
     <td><%= link_to t('delete'), rejection, :confirm => t('confirm'), :method => :delete %></td>

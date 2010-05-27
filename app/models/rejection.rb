@@ -2,7 +2,7 @@ class Rejection < ActiveRecord::Base
   belongs_to :session
   belongs_to :problem
   
-  validates_presence_of :totalRejected
+  validates_presence_of :number_of_rejected_packages
   
   def session_id=(id)
     self.session = Session.find(id)
