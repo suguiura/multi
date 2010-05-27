@@ -3,23 +3,21 @@
   <tr>
     <th><%=h Machine.human_attribute_name(:id) %></th>
     <th><%=h Machine.human_attribute_name(:code) %></th>
-    <th><%=h Machine.human_attribute_name(:number_of_heads) %></th>
-    <th><%=h Machine.human_attribute_name(:standard_number_of_packages_per_second) %></th>
-    <th><%=h Machine.human_attribute_name(:avaiable_seconds_per_day) %></th>
     <th><%=h Machine.human_attribute_name(:utilization_percent) %></th>
+    <th><%=h Machine.human_attribute_name(:eficiency_percent) %></th>
+    <th><%=h Machine.human_attribute_name(:productivity_percent) %></th>
   </tr>
 
 <% @machines.each do |machine| %>
+  <% clone_machine = machine.clone_with_sessions_in(@range) %>
   <tr>
     <td><%=h machine.id %></td>
     <td><%=h machine.code %></td>
-    <td><%=h machine.number_of_heads %></td>
-    <td><%=h machine.standard_number_of_packages_per_second %></td>
-    <td><%=h machine.avaiable_seconds_per_day.seconds_to_short_words %></td>
-    <td><%=h machine.utilization_percent %></td>
+    <td><%=h clone_machine.utilization_percent %></td>
+    <td><%=h clone_machine.eficiency_percent %></td>
+    <td><%=h clone_machine.productivity_percent %></td>
     <td><%= link_to t('show'), machine %></td>
     <td><%= link_to t('delete'), machine, :confirm => t('confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-

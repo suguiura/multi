@@ -66,6 +66,13 @@ class Machine < ActiveRecord::Base
     daily_productive_time_average.to_f / avaiable_seconds_per_day
   end
   
+  def clone_with_sessions_in(range)
+    conditions = range ? {:start => range} : {}
+    the_clone = self.clone
+    the_clone.sessions = self.sessions.find :all, :conditions => conditions
+    the_clone
+  end
+  
   def xls_column_names
     self.class.column_names + ['total_session_time'] - ['created_at', 'updated_at']
   end

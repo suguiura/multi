@@ -4,6 +4,9 @@ class MachinesController < ApplicationController
   def index
     @machines = Machine.all
 
+    date = params[:date] ? params[:date].to_date : nil
+    @range = inclusive_range(date)
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @machines }
@@ -15,16 +18,10 @@ class MachinesController < ApplicationController
   # GET /machines/1.xml
   def show
     @machine = Machine.find(params[:id])
-    @clone_machine = @machine.clone
-    
-    #s = params[:start]
-    #e = params[:end]
-    #conditions = (s && e) ? {:start => s..e} : {}
-    #@clone_machine.sessions = @machine.sessions.find :all, :conditions => conditions
 
-    d = params[:date]
-    conditions = d ? {:start => d} : {}
-    @clone_machine.sessions = @machine.sessions.find :all, :conditions => conditions
+    date = params[:date] ? params[:date].to_date : nil
+    @range = inclusive_range(date)
+    @clone_machine = @machine.clone_with_sessions_in(@range)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -92,5 +89,14 @@ class MachinesController < ApplicationController
       format.html { redirect_to(machines_url) }
       format.xml  { head :ok }
     end
+  end
+  
+private
+  def inclusive_range(date)
+    inclusive_range_between(date, date)
+  end
+  
+  def inclusive_range_between(start_at, end_at)
+    (start_at && end_at) ? start_at..(end_at + 1) : nil
   end
 end
