@@ -1,8 +1,14 @@
+
+<%= link_to t('edit'), edit_operator_path(@operator) %> |
+<%= link_to t('delete'), @operator, :confirm => t('confirm'), :method => :delete %>
+
 <p>
-  <b>Name:</b>
+  <b><%= Operator.human_attribute_name(:name) %>:</b>
   <%=h @operator.name %>
 </p>
 
+<p>
+  <%= link_to t('.sessions'), operator_sessions_path(@operator) %>
+</p>
 
-<%= link_to 'Edit', edit_operator_path(@operator) %> |
-<%= link_to 'Back', operators_path %>
+<%= link_to t('back'), operators_path %>

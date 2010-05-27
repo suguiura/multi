@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
-#  map.resources :operators
-
+  map.resources :operators do |operator|
+    operator.resources :sessions, :namespace => "operators/", :only => [ :index ]
+  end
   map.resources :products do |product|
     product.resources :sessions, :namespace => "products/", :only => [ :index ]
   end

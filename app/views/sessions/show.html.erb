@@ -27,8 +27,12 @@
 </p>
 
 <p>
+  <b><%=h Operator.human_name %>:</b>
+  <%=h @session.operator.name %>
+</p>
+
+<p>
   <%= link_to t('.rejections'), session_rejections_path(@session) %>
 </p>
 
-<%= link_to t('machines.show.sessions'), machine_sessions_path(@session.machine) %> |
 <%= link_to t('sessions.index.all'), sessions_path %>

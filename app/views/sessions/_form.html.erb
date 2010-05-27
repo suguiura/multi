@@ -22,6 +22,10 @@
     <%= f.collection_select :product_id, Product.all, :id, :name %>
   </p>
   <p>
+    <%= f.label :operator, Operator.human_name %><br />
+    <%= f.collection_select :operator_id, Operator.all, :id, :name %>
+  </p>
+  <p>
     <%= f.submit t('send') %>
   </p>
 <% end %>

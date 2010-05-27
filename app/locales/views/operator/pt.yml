@@ -1,0 +1,12 @@
+pt:
+  operators:
+    index:
+      header: 'Lista de operadores'
+      new: 'Novo operador'
+      all: 'Todos os operadores'
+    new:
+      header: 'Cadastro de novo operador'
+    edit:
+      header: 'Edição de operador'
+    show:
+      sessions: 'Sessões do operador'

@@ -1,0 +1,15 @@
+<h1><%= t('sessions.index.header') %> (<%= Operator.human_name %>: <%= link_to @operator.id, @operator %>)</h1>
+
+<%= render :partial => "/sessions/list" %>
+
+<% unless @sessions.empty? %>
+<p>
+  <%= link_to t('excel_format'), operator_sessions_path(@operator, :format => :xls) %>
+</p>
+<% end %>
+
+<p>
+  <%= link_to t('back'), @operator %> |
+  <%= link_to t('sessions.index.all'), sessions_path %>
+</p>
+

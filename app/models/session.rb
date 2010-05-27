@@ -1,6 +1,7 @@
 class Session < ActiveRecord::Base
   belongs_to :machine
   belongs_to :product
+  belongs_to :operator
   has_many :rejections, :dependent => :destroy
   
   composed_of :duration_select, :class_name => 'Time',
@@ -27,6 +28,13 @@ class Session < ActiveRecord::Base
   end
   def product_id
     self.product.id if self.product
+  end
+
+  def operator_id=(id)
+    self.operator = Operator.find(id)
+  end
+  def operator_id
+    self.operator.id if self.operator
   end
   
   def xls_column_names

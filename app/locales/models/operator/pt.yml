@@ -1,0 +1,9 @@
+pt:
+  activerecord:
+    models:
+      operator:
+        one: 'Operador'
+        other: 'Operadores'
+    attributes:
+      operator:
+        name: 'Nome'

@@ -1,0 +1,15 @@
+
+<table>
+  <tr>
+    <th><%= Operator.human_attribute_name(:name) %></th>
+  </tr>
+
+<% @operators.each do |operator| %>
+  <tr>
+    <td><%=h operator.name %></td>
+    <td><%= link_to t('show'), operator %></td>
+    <td><%= link_to t('edit'), edit_operator_path(operator) %></td>
+  </tr>
+<% end %>
+</table>
+
