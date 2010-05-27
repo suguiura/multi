@@ -1,43 +1,44 @@
+
+<p>
+  <% form_tag("#{@machine.id}", :method => 'get', :class => 'machine_sessions_date') do %>
+    <%= link_to 'Histórico', @machine %> |
+    <%= select_date() %>
+    <input type="submit" value="<%= t('select') %>" />
+  <% end %>
+</p>
+
+<hr>
+
 <%= link_to t('edit'), edit_machine_path(@machine) %> |
 <%= link_to t('delete'), @machine, :confirm => t('confirm'), :method => :delete %>
 
 <p>
   <b><%=h Machine.human_attribute_name(:code) %>:</b>
   <%=h @clone_machine.code %>
-</p>
-
-<p>
+  <br />
   <b><%=h Machine.human_attribute_name(:number_of_heads) %>:</b>
   <%=h @clone_machine.number_of_heads %>
-</p>
-
-<p>
+  <br />
   <b><%=h Machine.human_attribute_name(:standard_number_of_packages_per_second) %>:</b>
   <%=h @clone_machine.standard_number_of_packages_per_second %>
 </p>
 
 <p>
-  <b><%=h Machine.human_attribute_name(:number_of_packages) %>:</b>
+  <b><%= t('view.derived_attributes') %></b>
+  <br>
+  <%=h Machine.human_attribute_name(:number_of_packages) %>:
   <%=h @clone_machine.number_of_packages %>
-</p>
-
-<p>
-  <b><%=h Machine.human_attribute_name(:productive_days) %>:</b>
+  <br>
+  <%=h Machine.human_attribute_name(:productive_days) %>:
   <%=h @clone_machine.productive_days %>
-</p>
-
-<p>
-  <b><%=h Machine.human_attribute_name(:avaiable_seconds_per_day) %>:</b>
+  <br>
+  <%=h Machine.human_attribute_name(:avaiable_seconds_per_day) %>:
   <%=h @clone_machine.avaiable_seconds_per_day.seconds_to_short_words %>
-</p>
-
-<p>
-  <b><%=h Machine.human_attribute_name(:daily_number_of_packages_average) %>:</b>
+  <br>
+  <%=h Machine.human_attribute_name(:daily_number_of_packages_average) %>:
   <%=h @clone_machine.daily_number_of_packages_average %>
-</p>
-
-<p>
-  <b><%=h Machine.human_attribute_name(:total_session_time) %>:</b>
+  <br>
+  <%=h Machine.human_attribute_name(:total_session_time) %>:
   <%=h @clone_machine.total_session_time.seconds_to_short_words %>
 </p>
 
@@ -72,4 +73,5 @@
 </p>
 
 <%= link_to t('machines.index.all'), machines_path %>
+
 

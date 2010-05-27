@@ -4,7 +4,7 @@ class MachinesController < ApplicationController
   def index
     @machines = Machine.all
 
-    date = params[:date] ? params[:date].to_date : nil
+    date = make_date_from_param(params[:date])
     @range = inclusive_range(date)
 
     respond_to do |format|
@@ -19,7 +19,7 @@ class MachinesController < ApplicationController
   def show
     @machine = Machine.find(params[:id])
 
-    date = params[:date] ? params[:date].to_date : nil
+    date = make_date_from_param(params[:date])
     @range = inclusive_range(date)
     @clone_machine = @machine.clone_with_sessions_in(@range)
 
@@ -92,6 +92,18 @@ class MachinesController < ApplicationController
   end
   
 private
+  def make_date_from_param(value)
+    if params[:date]
+      if params[:date].is_a?(Hash)
+        h = params[:date]
+        params[:date] = ("" << h['year'] << '-' << h['month'] << '-' << h['day'])
+      end
+      if params[:date].respond_to?('to_date')
+        params[:date].to_date
+      end
+    end
+  end
+
   def inclusive_range(date)
     inclusive_range_between(date, date)
   end

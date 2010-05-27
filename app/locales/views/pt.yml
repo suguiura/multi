@@ -6,7 +6,9 @@ pt:
   delete: 'Apagar'
   confirm: 'Tem certeza?'
   excel_format: 'Formato Excel'
+  select: 'Selecionar'
   
   view:
     percents: 'Percentuais'
     time_averages: 'Médias de tempo'
+    derived_attributes: 'Atributos derivados'
