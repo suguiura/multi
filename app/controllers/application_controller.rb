@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  before_filter :hijack_ie_default_format
+  def hijack_ie_default_format
+    if request.user_agent =~ /MSIE/ and params['format'].nil?
+      params['format'] = 'html'
+    end
+  end
 end
+
