@@ -44,26 +44,26 @@
 
 <p>
   <b><%= t('view.time_averages') %></b>
-<br />
+  <br />
   <%=h Machine.human_attribute_name(:daily_session_time_average) %>:
   <%=h @clone_machine.daily_session_time_average.seconds_to_short_words %>
-<br />
+  <br />
   <%=h Machine.human_attribute_name(:session_time_average) %>:
   <%=h @clone_machine.session_time_average.seconds_to_short_words %>
-<br />
+  <br />
   <%=h Machine.human_attribute_name(:daily_productive_time_average) %>:
   <%=h @clone_machine.daily_productive_time_average.seconds_to_short_words %>
 </p>
 
 <p>
   <b><%= t('view.percents') %></b>
-<br />
+  <br />
   <%=h Machine.human_attribute_name(:utilization_percent) %>:
   <%=h @clone_machine.utilization_percent %>
-<br />
+  <br />
   <%=h Machine.human_attribute_name(:eficiency_percent) %>:
   <%=h @clone_machine.eficiency_percent %>
-<br />
+  <br />
   <%=h Machine.human_attribute_name(:productivity_percent) %>:
   <%=h @clone_machine.productivity_percent %>
 </p>
