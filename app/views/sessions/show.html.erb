@@ -1,38 +1,35 @@
 <%= link_to t('edit'), edit_session_path(@session) %> |
-<%= link_to t('delete'), session, :confirm => t('confirm'), :method => :delete %>
+<%= link_to t('delete'), @session, :confirm => t('confirm'), :method => :delete %>
+
+<hr />
 
 <p>
-  <b><%=h Session.human_attribute_name(:start) %>:</b>
-  <%=h @session.start %>
-</p>
-
-<p>
-  <b><%=h Session.human_attribute_name(:duration) %>:</b>
-  <%=h @session.duration.seconds_to_long_words %>
+  <b><%=h Product.human_name %>:</b>
+  <%= link_to @session.product.name, @session.product %>
+  <br />
+  <b><%=h Machine.human_name %>:</b>
+  <%= link_to @session.machine.code, @session.machine %>
+  <br />
+  <b><%=h Operator.human_name %>:</b>
+  <%= link_to @session.operator.name, @session.operator %>
 </p>
 
 <p>
   <b><%=h Session.human_attribute_name(:number_of_packages) %>:</b>
   <%=h @session.number_of_packages %>
-</p>
-
-<p>
-  <b><%=h Machine.human_name %>:</b>
-  <%= link_to @session.machine.code, @session.machine %>
-</p>
-
-<p>
-  <b><%=h Product.human_name %>:</b>
-  <%= link_to @session.product.name, @session.product %>
-</p>
-
-<p>
-  <b><%=h Operator.human_name %>:</b>
-  <%= link_to @session.operator.name, @session.operator %>
+  <br />
+  <b><%=h Session.human_attribute_name(:start) %>:</b>
+  <%=h @session.start %>
+  <br />
+  <b><%=h Session.human_attribute_name(:duration) %>:</b>
+  <%=h @session.duration.seconds_to_long_words %>
 </p>
 
 <p>
   <%= link_to t('.rejections'), session_rejections_path(@session) %>
 </p>
 
+<hr />
+
 <%= link_to t('sessions.index.all'), sessions_path %>
+
