@@ -19,7 +19,7 @@
   <%=h @session.number_of_packages %>
   <br />
   <b><%=h Session.human_attribute_name(:start) %>:</b>
-  <%=h @session.start %>
+  <%=h l @session.start %>
   <br />
   <b><%=h Session.human_attribute_name(:duration) %>:</b>
   <%=h @session.duration.seconds_to_long_words %>

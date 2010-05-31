@@ -3,13 +3,10 @@
 <%= render :partial => "/rejections/list" %>
 <%= link_to t('rejections.index.new'), new_session_rejection_path(@session) %>
 
-<% unless @rejections.empty? %>
-<p>
-  <%= link_to t('excel_format'), session_rejections_path(@session, :format => :xls) %>
-</p>
-<% end %>
+<hr />
 
 <p>
   <%= link_to t('back'), @session %> |
-  <%= link_to t('rejections.index.all'), rejections_path %>
+  <%= link_to t('rejections.index.all'), rejections_path %> |
+  <%= link_to_unless @rejections.empty?, t('excel_format'), session_rejections_path(@session, :format => :xls) %>
 </p>

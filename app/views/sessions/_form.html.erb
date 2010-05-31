@@ -26,6 +26,7 @@
     <%= f.collection_select :operator_id, Operator.all, :id, :name %>
   </p>
   <p>
-    <%= f.submit t('send') %>
+    <%= f.submit t('send') %> |
+    <%= link_to t('cancel'), link_to_cancel_options %>
   </p>
 <% end %>

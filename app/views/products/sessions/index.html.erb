@@ -2,14 +2,11 @@
 
 <%= render :partial => "/sessions/list" %>
 
-<% unless @sessions.empty? %>
-<p>
-  <%= link_to t('excel_format'), product_sessions_path(@product, :format => :xls) %>
-</p>
-<% end %>
+<hr />
 
 <p>
   <%= link_to t('back'), @product %> |
-  <%= link_to t('sessions.index.all'), sessions_path %>
+  <%= link_to t('sessions.index.all'), sessions_path %> |
+  <%= link_to_unless @sessions.empty?, t('excel_format'), product_sessions_path(@product, :format => :xls) %>
 </p>
 

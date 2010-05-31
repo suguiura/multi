@@ -9,4 +9,4 @@ pt:
     edit:
       header: 'Edição de máquina'
     show:
-      sessions: 'Sessões da máquina'
+      sessions: 'Sessões desta máquina'

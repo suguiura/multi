@@ -14,7 +14,8 @@
     <%= f.collection_select :problem_id, Problem.all, :id, :name %>
   </p>
   <p>
-    <%= f.submit t('send') %>
+    <%= f.submit t('send') %> |
+    <%= link_to t('cancel'), link_to_cancel_options %>
   </p>
 <% end %>
 

@@ -4,9 +4,9 @@
 
 <%= link_to t('.new'), new_machine_path %>
 
-<% unless @machines.empty? %>
+<hr />
+
 <p>
-  <%= link_to t('excel_format'), machines_path(:format => :xls) %>
+  <%= link_to_unless @machines.empty?, t('excel_format'), machines_path(:format => :xls) %>
 </p>
-<% end %>
 

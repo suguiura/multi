@@ -3,14 +3,11 @@
 <%= render :partial => "/sessions/list" %>
 <%= link_to t('sessions.index.new'), new_machine_session_path(@machine) %>
 
-<% unless @sessions.empty? %>
-<p>
-  <%= link_to t('excel_format'), machine_sessions_path(@machine, :format => :xls) %>
-</p>
-<% end %>
+<hr />
 
 <p>
   <%= link_to t('back'), @machine %> |
-  <%= link_to t('sessions.index.all'), sessions_path %>
+  <%= link_to t('sessions.index.all'), sessions_path %> |
+  <%= link_to_unless @sessions.empty?, t('excel_format'), machine_sessions_path(@machine, :format => :xls) %>
 </p>
 

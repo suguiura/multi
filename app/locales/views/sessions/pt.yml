@@ -9,4 +9,4 @@ pt:
     edit:
       header: 'Edição de Sessão'
     show:
-      rejections: 'Rejeições da Sessão'
+      rejections: 'Rejeições desta Sessão'

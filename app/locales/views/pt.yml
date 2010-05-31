@@ -3,6 +3,7 @@ pt:
   show: 'Exibir'
   edit: 'Editar'
   send: 'Enviar'
+  cancel: 'Cancelar'
   delete: 'Apagar'
   confirm: 'Tem certeza?'
   excel_format: 'Formato Excel'

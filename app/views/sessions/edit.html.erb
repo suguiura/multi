@@ -1,7 +1,4 @@
 <h1><%= t '.header' %></h1>
 
-<%= render :partial => 'form', :locals => { :form_object => @session } %>
+<%= render :partial => 'form', :locals => { :form_object => @session, :link_to_cancel_options => @session } %>
 
-<%= link_to t('show'), @session %> |
-<%= link_to t('machines.show.sessions'), machine_sessions_path(@session.machine) %> |
-<%= link_to t('sessions.index.all'), sessions_path %>

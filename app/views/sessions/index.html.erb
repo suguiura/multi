@@ -2,9 +2,9 @@
 
 <%= render :partial => "list" %>
 
-<% unless @sessions.empty? %>
+<hr />
+
 <p>
-  <%= link_to t('excel_format'), sessions_path(:format => :xls) %>
+  <%= link_to_unless @sessions.empty?, t('excel_format'), sessions_path(:format => :xls) %>
 </p>
-<% end %>
 

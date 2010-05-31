@@ -1,5 +1,4 @@
 <h1><%= t '.header' %></h1>
 
-<%= render :partial => "form", :locals => { :form_object => @machine } %>
+<%= render :partial => "form", :locals => { :form_object => @machine, :link_to_cancel_options => @machine } %>
 
-<%= link_to t('back'), @machine %>

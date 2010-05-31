@@ -2,9 +2,9 @@
 
 <%= render :partial => "list" %>
 
-<% unless @rejections.empty? %>
+<hr />
+
 <p>
-  <%= link_to t('excel_format'), rejections_path(:format => :xls) %>
+  <%= link_to_unless @rejections.empty?, t('excel_format'), rejections_path(:format => :xls) %>
 </p>
-<% end %>
 

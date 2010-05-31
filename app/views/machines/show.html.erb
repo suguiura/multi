@@ -1,16 +1,20 @@
 
-<div>
-  <% form_tag("#{@machine.id}", :method => 'get', :class => 'machine_sessions_date') do %>
-    <%= link_to 'Histórico', @machine %> |
-    <%= select_date() %>
-    <input type="submit" value="<%= t('select') %>" />
-  <% end %>
-</div>
-
-<hr />
-
 <%= link_to t('edit'), edit_machine_path(@machine) %> |
 <%= link_to t('delete'), @machine, :confirm => t('confirm'), :method => :delete %>
+
+...
+
+[ Considerar as sessões do dia:
+<%= link_to 'Todos os dias', @machine %> |
+<div style="display: inline-block;">
+  <% form_tag("#{@machine.id}", :method => 'get', :class => 'machine_sessions_date') do %>
+    <%= select_date() %>
+    <input type="submit" value="Selecionar dia" />
+  <% end %>
+</div>
+]
+
+<hr />
 
 <p>
   <b><%=h Machine.human_attribute_name(:code) %>:</b>
@@ -71,6 +75,8 @@
 <p>
   <%= link_to t('.sessions'), machine_sessions_path(@machine) %>
 </p>
+
+<hr />
 
 <%= link_to t('machines.index.all'), machines_path %>
 

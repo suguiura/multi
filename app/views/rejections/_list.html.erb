@@ -8,7 +8,7 @@
 <% @rejections.each do |rejection| %>
   <tr>
     <td><%=h rejection.number_of_rejected_packages %></td>
-    <td><%= link_to rejection.session.start, rejection.session %></td>
+    <td><%= link_to l(rejection.session.start, :format => :short), rejection.session %></td>
     <td><%= link_to rejection.problem.name, rejection.problem %></td>
     <td><%= link_to t('delete'), rejection, :confirm => t('confirm'), :method => :delete %></td>
   </tr>
