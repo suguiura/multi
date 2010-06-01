@@ -12,8 +12,8 @@
   </p>
 
   <p>
-    <%= f.label :standard_number_of_packages_per_second %><br />
-    <%= f.text_field :standard_number_of_packages_per_second %>
+    <%= f.label :standard_seconds_per_package %><br />
+    <%= f.time_select :standard_seconds_per_package_select, :include_seconds => true, :default => '0' %>
   </p>
   
   <p>

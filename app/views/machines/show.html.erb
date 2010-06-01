@@ -23,8 +23,11 @@
   <b><%=h Machine.human_attribute_name(:number_of_heads) %>:</b>
   <%=h @clone_machine.number_of_heads %>
   <br />
-  <b><%=h Machine.human_attribute_name(:standard_number_of_packages_per_second) %>:</b>
-  <%=h @clone_machine.standard_number_of_packages_per_second %>
+  <b><%=h Machine.human_attribute_name(:standard_seconds_per_package) %>:</b>
+  <%=h @clone_machine.standard_seconds_per_package.seconds_to_short_words %>
+  <br />
+  <b><%=h Machine.human_attribute_name(:avaiable_seconds_per_day) %>:</b>
+  <%=h @clone_machine.avaiable_seconds_per_day.seconds_to_short_words %>
 </p>
 
 <p>
@@ -35,9 +38,6 @@
   <br />
   <%=h Machine.human_attribute_name(:productive_days) %>:
   <%=h @clone_machine.productive_days %>
-  <br />
-  <%=h Machine.human_attribute_name(:avaiable_seconds_per_day) %>:
-  <%=h @clone_machine.avaiable_seconds_per_day.seconds_to_short_words %>
   <br />
   <%=h Machine.human_attribute_name(:daily_number_of_packages_average) %>:
   <%=h @clone_machine.daily_number_of_packages_average %>

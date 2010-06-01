@@ -3,17 +3,21 @@ class Machine < ActiveRecord::Base
   
   validates_presence_of :code
 
-  validates_presence_of :standard_number_of_packages_per_second
-  validates_numericality_of :standard_number_of_packages_per_second
+#  validates_presence_of :standard_number_of_packages_per_second
+#  validates_numericality_of :standard_number_of_packages_per_second
 
-  validates_presence_of :number_of_heads
-  validates_numericality_of :number_of_heads, :only_integer => true
+#  validates_presence_of :number_of_heads
+#  validates_numericality_of :number_of_heads, :only_integer => true
 
-  validates_presence_of :avaiable_seconds_per_day
-  validates_numericality_of :avaiable_seconds_per_day, :only_integer => true
+#  validates_presence_of :avaiable_seconds_per_day
+#  validates_numericality_of :avaiable_seconds_per_day, :only_integer => true
   
   composed_of :available_time_select, :class_name => 'Time',
     :mapping => %w(avaiable_seconds_per_day to_i),
+    :constructor => Proc.new { |x| Time.at(x || 0) }
+  
+  composed_of :standard_seconds_per_package_select, :class_name => 'Time',
+    :mapping => %w(standard_seconds_per_package to_i),
     :constructor => Proc.new { |x| Time.at(x || 0) }
 
   def total_session_time # derived attribute
@@ -34,6 +38,10 @@ class Machine < ActiveRecord::Base
     set.size
   end
   
+  def standard_packages_per_second
+    1.0 / standard_seconds_per_package
+  end
+  
   def session_time_average # derived attribute
     number_of_sessions = sessions.size
     total_session_time.to_f / number_of_sessions
@@ -50,7 +58,7 @@ class Machine < ActiveRecord::Base
   end
   
   def daily_productive_time_average # derived attribute
-    speed = standard_number_of_packages_per_second
+    speed = standard_packages_per_second
     daily_number_of_packages_average.to_f / speed
   end
   
