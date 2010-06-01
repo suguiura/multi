@@ -18,7 +18,7 @@ pt:
         daily_session_time_average: 'Média do tempo de trabalho diário'
         utilization_percent: 'Percentual de utilização'
         daily_number_of_packages_average: 'Média do número de pacotes diário'
-        daily_productive_time_average: 'Média do tempo produtivo diária'
+        daily_productive_seconds_average: 'Média do tempo produtivo diário'
         eficiency_percent: 'Percentual de eficiência'
         productivity_percent: 'Percentual de produtividade'
         

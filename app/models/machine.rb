@@ -38,10 +38,6 @@ class Machine < ActiveRecord::Base
     set.size
   end
   
-  def standard_packages_per_second
-    1.0 / standard_seconds_per_package
-  end
-  
   def session_time_average # derived attribute
     number_of_sessions = sessions.size
     total_session_time.to_f / number_of_sessions
@@ -57,9 +53,9 @@ class Machine < ActiveRecord::Base
     number_of_packages.to_f / days
   end
   
-  def daily_productive_time_average # derived attribute
-    speed = standard_packages_per_second
-    daily_number_of_packages_average.to_f / speed
+  def daily_productive_seconds_average # derived attribute
+    rate = standard_seconds_per_package
+    daily_number_of_packages_average.to_f * rate
   end
   
   def utilization_percent # derived attribute
@@ -67,11 +63,11 @@ class Machine < ActiveRecord::Base
   end
   
   def eficiency_percent # derived attribute
-    daily_productive_time_average.to_f / daily_session_time_average
+    daily_productive_seconds_average.to_f / daily_session_time_average
   end
   
   def productivity_percent # derived attribute
-    daily_productive_time_average.to_f / avaiable_seconds_per_day
+    daily_productive_seconds_average.to_f / avaiable_seconds_per_day
   end
   
   def clone_with_sessions_in(range)
