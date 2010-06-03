@@ -2,15 +2,6 @@ class Machine < ActiveRecord::Base
   has_many :sessions, :dependent => :destroy
   
   validates_presence_of :code
-
-#  validates_presence_of :standard_number_of_packages_per_second
-#  validates_numericality_of :standard_number_of_packages_per_second
-
-#  validates_presence_of :number_of_heads
-#  validates_numericality_of :number_of_heads, :only_integer => true
-
-#  validates_presence_of :avaiable_seconds_per_day
-#  validates_numericality_of :avaiable_seconds_per_day, :only_integer => true
   
   composed_of :available_time_select, :class_name => 'Time',
     :mapping => %w(avaiable_seconds_per_day to_i),
@@ -40,34 +31,34 @@ class Machine < ActiveRecord::Base
   
   def session_time_average # derived attribute
     number_of_sessions = sessions.size
-    total_session_time.to_f / number_of_sessions
+    total_session_time == 0 ? 0 : total_session_time.to_f / number_of_sessions
   end
   
   def daily_session_time_average # derived attribute
     days = productive_days
-    total_session_time.to_f / days
+    total_session_time == 0 ? 0 : total_session_time.to_f / days
   end
   
   def daily_number_of_packages_average # derived attribute
     days = productive_days
-    number_of_packages.to_f / days
+    number_of_packages == 0 ? 0 : number_of_packages.to_f / days
   end
   
   def daily_productive_seconds_average # derived attribute
     rate = standard_seconds_per_package
-    daily_number_of_packages_average.to_f * rate
+    daily_number_of_packages_average == 0 ? 0 : daily_number_of_packages_average.to_f * rate
   end
   
   def utilization_percent # derived attribute
-    daily_session_time_average.to_f / avaiable_seconds_per_day
+    daily_session_time_average == 0 ? 0 : daily_session_time_average.to_f / avaiable_seconds_per_day
   end
   
   def eficiency_percent # derived attribute
-    daily_productive_seconds_average.to_f / daily_session_time_average
+    daily_productive_seconds_average == 0 ? 0 : daily_productive_seconds_average.to_f / daily_session_time_average
   end
   
   def productivity_percent # derived attribute
-    daily_productive_seconds_average.to_f / avaiable_seconds_per_day
+    daily_productive_seconds_average == 0 ? 0 : daily_productive_seconds_average.to_f / avaiable_seconds_per_day
   end
   
   def clone_with_sessions_in(range)
@@ -81,3 +72,4 @@ class Machine < ActiveRecord::Base
     self.class.column_names + ['total_session_time'] - ['created_at', 'updated_at']
   end
 end
+
