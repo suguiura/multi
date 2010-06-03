@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: 
-  description: MyText
+defect:
+  name: defeito
+  description: Defeito de impressão
 
-two:
-  name: 
-  description: MyText
+error:
+  name: erro
+  description: Erro de precisão

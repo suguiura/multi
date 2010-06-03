@@ -1,13 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  name: Placas de acrílico
   board_type: 1
   number_of_holes_per_board: 1
   number_of_boards_per_package: 1
   number_of_packages: 1
 
 two:
-  board_type: 1
-  number_of_holes_per_board: 1
-  number_of_boards_per_package: 1
-  number_of_packages: 1
+  name: Placas de gelo
+  board_type: 2
+  number_of_holes_per_board: 2
+  number_of_boards_per_package: 2
+  number_of_packages: 2

@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  totalRejected: 1
-  session: 
+  number_of_rejected_packages: 1
+  session_id: 
 
 two:
-  totalRejected: 1
-  session: 
+  number_of_rejected_packages: 2
+  session_id: 

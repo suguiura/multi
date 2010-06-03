@@ -1,11 +1,14 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  code: MyString
-  availableTime: 1
-  totalHeaders: 1
+one_machine:
+  code: Primeira Máquina
+  avaiable_seconds_per_day: 32400
+  number_of_heads: 6
+  standard_seconds_per_package: 600
 
-two:
-  code: MyString
-  availableTime: 1
-  totalHeaders: 1
+another_machine:
+  code: Mais uma máquina
+  avaiable_seconds_per_day: 3600
+  number_of_heads: 1
+  standard_seconds_per_package: 100
+
